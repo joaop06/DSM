@@ -1,0 +1,55 @@
+#calendario #cabecalho_calendario h2{
+    font-size: 55px;
+    margin-left: 5%;
+    width: 70%;
+    color: #9E0303;
+}
+
+#calendario #cabecalho_calendario h3{
+
+    margin-top: 25px;
+    text-align: center;
+    font-size: 25px;
+    height: 50px;
+}
+
+#calendario .page{
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 20px;
+}
+
+#calendario .conteudo{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#calendario #tabela{
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    align-content: center;
+    border: 5px solid #9E0303;
+    border-radius: 20px;
+    list-style: none;
+}
+
+#calendario #tabela .p_rodape{
+    align-items: center;
+    border: 3px solid #9E0303;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+#calendario #tabela .p_rodape p{
+    border: 1.5px solid #9E0303;
+    border-radius: 5px;
+    
+}
+
+#calendario a{
+    text-decoration: none;
+}
+
+#calendario #tabela .descricao_dia{
+    min-height: 130px;
+}

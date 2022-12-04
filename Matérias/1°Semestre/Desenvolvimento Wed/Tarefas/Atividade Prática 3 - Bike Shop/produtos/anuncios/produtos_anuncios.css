@@ -1,0 +1,47 @@
+ol{
+    background-color: white;
+    margin: 7% 17%;
+    margin-top: 70px;
+}
+
+li{
+    list-style: none;
+}
+/* 
+#cima{
+    margin: 60px auto;
+    width: 30%;
+}
+*/
+#img_titulo{
+    display: flex;
+}
+
+#img_anuncio{
+    margin-top: 15px;
+    padding: 0 2px;
+    
+}
+
+.conteudo_anuncio{
+    background-color: white;
+    text-align: center;
+    margin: auto 400px;
+}
+
+#info{
+    text-align: center;
+    margin: 0 10px;
+}
+
+
+
+#preco{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+#descricao{
+    margin-left: 45px;
+}

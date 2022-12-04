@@ -1,0 +1,111 @@
+#intensivo{
+    justify-content: center;
+    background-color: #cecece;
+}
+
+#intensivo .page{
+    margin-top: 10.5em;
+}
+
+#intensivo .page{
+    margin-top: 10.5em;
+    width: 90%;
+}
+
+#intensivo h2{
+    font-size: 55px;
+    margin-left: 10%;
+    width: 70%;
+    color: #9E0303;
+}
+
+#intensivo #bloco_aulas{
+    margin: 5%;
+}
+
+#intensivo .linha_aulas{
+    max-width: 75%;
+    display: flex;
+
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+}
+
+#intensivo .aula{
+    padding: 1%;
+    max-width: 45%;
+    margin: 1%;
+
+}
+
+#intensivo .aula .img_aula{
+    justify-content: space-between;
+}
+
+#intensivo .aula img{
+    justify-content: right;
+    max-width: 85%;
+}
+
+#intensivo .aula h3{
+    margin-top: 0.7%;
+    padding-left: 5%;
+    font-size: 22px;
+}
+
+#intensivo #chat{
+    margin: auto 1%;
+    align-items: center;
+    width: 12vw;
+    margin-top: 10em;
+    z-index: 1;
+    border-radius: 25px;
+    padding: 0.7em;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255);
+
+}
+
+#intensivo #chat p{
+    background-color: #9E0303;
+    color: white;
+    font-size: 20px;
+    padding: 5%;
+    text-align: center;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    align-content: end;
+    height: 2%;
+}
+
+#intensivo #chat #espaco_msg{
+    background-image: url(../../img/background_chat.png);
+    border-top: 0;
+    height: 35vh;
+    align-content: end;
+    border: #9E0303 solid 2px;
+    border-top: 0;
+}
+
+#intensivo #chat #enviar{
+    display: flex;
+    margin-top: 5%;    
+}
+
+#intensivo #chat #enviar input{
+    background-color: white;
+    border: rgb(206, 206, 206) solid 2px;
+    border-radius: 5px;
+}
+
+#intensivo #chat #enviar input:focus{
+    border: #9E0303 solid 2px;
+}
+
+#intensivo #chat #enviar button{
+    background-color: #ffffff;
+    border: #cecece solid 2px;
+    border-radius: 5px;
+    margin-left: 5%;
+}

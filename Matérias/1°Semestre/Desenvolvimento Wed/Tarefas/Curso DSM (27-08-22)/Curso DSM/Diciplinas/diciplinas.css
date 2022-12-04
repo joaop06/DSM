@@ -1,0 +1,25 @@
+body{
+    text-align: center;
+    background-image: url("../Imagens/background.gif");
+    background-repeat: repeat;
+    color: white;}
+
+h1{
+    font-size: 40px;
+    color: rgb(31, 184, 223);
+    text-decoration: underline;}
+
+h2{
+    font-size: 32px;}
+
+
+p{
+    text-decoration: underline;
+    font-size: 28px;
+    text-align: left;}
+
+ul, li{
+    font-size: 20px;
+    text-align: left;}
+
+

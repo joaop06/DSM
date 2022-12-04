@@ -1,0 +1,241 @@
+/*CURSOS*/
+#cursos{
+    background-color: #cecece;
+}
+
+#cursos .page{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#cursos h2{
+    font-size: 55px;
+    margin-left: 10%;
+    width: 70%;
+    color: #9E0303;
+}
+
+#cursos h3{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 25px;
+    height: 50px;
+}
+
+#cursos #bloco_cursos{
+    margin: 5%;
+}
+
+#cursos .linha_cursos{
+    max-width: 75%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+#cursos .curso{
+    max-width: 25%;
+    margin: 0.8%;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 4px 3px 2px rgb(136, 136, 136);
+    border-radius: 7px;
+    word-break: break-word;
+}
+
+#cursos .curso:hover{
+    transition: 0.3s;
+    box-shadow: 7px 7px 5px rgb(136, 136, 136);   
+    border: #9E0303 solid 2px;
+}
+
+#cursos .img_curso{
+    width: 75%;
+    margin: 10px auto;
+}
+
+#cursos img{
+    max-width: 100%;
+}
+
+#cursos #borda_divisao{
+    margin: 10px 20px;
+    border: #cecece solid 1px;
+    background-color: #cecece;
+}
+
+#cursos #descricao_curso{
+    width: 85%;
+    flex-wrap: wrap;
+    margin: 10px 20px 0px 20px;
+}
+
+#cursos h4{
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#cursos p{
+    font-size: 17px;
+    margin-top: 10px;
+    text-indent: 1em;
+    flex-wrap: wrap;
+}
+
+#cursos .botao{
+    margin: 10%;
+    text-align: center;
+    word-break: normal;
+}
+
+#cursos .bot_comecar{
+    font-size: 17px;
+    text-decoration: none;
+    color: white;
+    background-color: #ff8080;
+    border: #ff0000 solid 1px;
+    border-radius: 5px;
+    padding: 2% 20%;
+}
+
+#cursos .bot_comecar:hover{
+    background-color: #fa5e5e;
+}
+
+@media screen and (max-width: 1700px) {
+    #cursos h2{
+        font-size: 50px;
+    }
+    
+    #cursos h3{
+        font-size: 18px;
+    }
+
+    #cursos h4{
+        font-size: 20px;
+    }
+    
+    #cursos p{
+        font-size: 16px;
+    }
+    
+    #cursos .bot_comecar{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    #cursos h2{
+        font-size: 45px;
+    }
+    
+    #cursos h3{
+        font-size: 17px;
+    }
+
+    #cursos h4{
+        font-size: 18px;
+    }
+    
+    #cursos p{
+        font-size: 15px;
+    }
+    
+    #cursos .bot_comecar{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #cursos h2{
+        font-size: 40px;
+    }
+    
+    #cursos h3{
+        font-size: 15px;
+    }
+
+    #cursos h4{
+        font-size: 16px;
+        text-align: left;
+    }
+    
+    #cursos p{
+        font-size: 14px;
+    }
+    
+    #cursos .bot_comecar{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #cursos h2{
+        font-size: 35px;
+    }
+    
+    #cursos h3{
+        font-size: 13px;
+    }
+
+    #cursos h4{
+        font-size: 13px;
+        text-align: left;
+    }
+    
+    #cursos p{
+        font-size: 10px;
+    }
+    
+    #cursos .bot_comecar{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #cursos h2{
+        font-size: 30px;
+    }
+    
+    #cursos h3{
+        font-size: 11px;
+    }
+
+    #cursos h4{
+        font-size: 10px;
+        text-align: left;
+    }
+    
+    #cursos p{
+        font-size: 8px;
+    }
+    
+    #cursos .bot_comecar{
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    #cursos h2{
+        font-size: 30px;
+    }
+    
+    #cursos h3{
+        font-size: 11px;
+    }
+
+    #cursos h4{
+        font-size: 8px;
+        text-align: left;
+    }
+    
+    #cursos p{
+        font-size: 6px;
+    }
+    
+    #cursos .bot_comecar{
+        font-size: 6px;
+    }
+}

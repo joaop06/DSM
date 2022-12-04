@@ -1,0 +1,47 @@
+main{
+    display: flex;
+}
+
+.primeira{
+    width: 33.33%;
+    height: 150px;
+    background-color: red;
+    color: white;
+}
+
+.segunda{
+    margin: 30px 5px 0px 5px;
+    width: 33.33%;
+    height: 150px;
+    background-color: blue;
+    color: white;
+}
+
+.terceira{
+    width: 33.33%;
+    height: 150px;
+    background-color: green;
+    color: white;
+}
+
+.quarta{
+    width: 33.33%;
+    height: 150px;
+    background-color: orangered;
+    color: white;
+}
+
+.quinta{
+    padding: 50px 50px 50px 50px;
+    width: 33.33%;
+    height: 150px;
+    background-color: black;
+    color: white;
+}
+
+.sexta{
+    width: 33.33%;
+    height: 150px;
+    background-color: rgb(255, 0, 255);
+    color: white;
+}

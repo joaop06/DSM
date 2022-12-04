@@ -1,0 +1,27 @@
+body{
+    background-color: gray;
+}
+
+a:link{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: black;
+    color: greenyellow;
+    text-decoration: none;
+}
+
+a:visited{
+    background-color: red;
+    color: white;
+    text-decoration: none;
+}
+
+a:active{
+    background-color: blue;
+    color: yellow;
+    text-decoration: none;
+}

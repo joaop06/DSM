@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(203, 249, 255);
+}
+
+header{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+header a{
+    color: rgb(0, 174, 197);
+    font-weight: bold;
+    font-size: 40px;
+}
+
+li a{
+    margin: 0 15px;
+}
+
+#botao_home{
+    margin-right: 250px;
+}
+
+header img{
+    width: 17%;
+}
+
+.menu, .menu a{
+    display: flex;
+    list-style: none;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#logo{
+    margin: auto 0;
+    font-weight: bold;
+    background-color: black;
+}

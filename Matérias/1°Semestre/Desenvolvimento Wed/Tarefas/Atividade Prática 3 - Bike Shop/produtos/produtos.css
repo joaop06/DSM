@@ -1,0 +1,46 @@
+#produtos{
+    background-color: rgb(0, 174, 197);
+}
+
+#botao_home{
+    color: rgb(0, 174, 197);
+}
+
+#lista_produtos img{
+    border-radius: 7%;
+}
+
+ol{
+    justify-content: space-between;
+    margin: 10%;
+}
+
+#lista_produtos li{
+    display: flex;
+    padding: 15px;
+}
+
+li div p{
+    margin-top: 15px;
+    margin-left: 30px;
+    font-size: 25px;
+}
+
+.back-color-1{
+    display: flex;
+    background-color: white;
+}
+
+.back-color-2{
+    display: flex;
+    background-color: rgb(234, 234, 234);
+}
+
+section{
+    display: block;
+    justify-content: space-between;
+}
+
+h2, p{
+    color: black;
+}

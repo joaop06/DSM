@@ -1,0 +1,32 @@
+body{
+    text-align: center;
+    text-shadow: 3px 3px black;
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+    background-image: url("gifrazer.gif");
+    background-size: 100%;
+}
+
+
+div {
+    animation: changeColor 6s infinite;
+    }
+      
+      
+@-webkit-keyframes changeColor {
+    0% {background-color: pink;}
+    20% {background-color: orange;}
+    40%   {background-color: yellow;}
+    60%  {background-color: green;}
+    80%  {background-color: blue;}
+    100% {background-color: violet;}
+
+}
+
+
+p{ 
+
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    text-align: justify;
+}

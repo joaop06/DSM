@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="contato.css">
+    <link rel="stylesheet" href="../base.css">
+</head>
+<body>
+<header>
+    <div id="logo" style="margin-top: 15px;">
+        <a href="../index.html"><img src="../Img/logo.png" alt="Logo"></a>
+    </div>
+
+    <div id="botao_home">
+        <a href="../index.html"><p>Bike Shop</p></a>
+    </div>
+    
+    <nav>
+        <ul class="menu">
+            <li><a href="../sobre/sobre.html">Sobre</a></li>
+            <li><a href="../produtos/produtos.html">Produtos</a></li>
+            <li id="contato"><a style="color: black;" href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h1>Fale Conosco!</h1>
+
+<form action="/pagina_processamento" method="get">
+    <div style="display: flex;">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" value=""/>
+        </div>
+    <br>
+        <dir>
+            <label for="celular">Celular:</label>
+            <input type="text" id="celular" value=""/>
+        </dir>
+    </div>
+<br>
+    <div>
+        <label for="email">E-mail:</label>
+        <input type="email" id="emailid">
+    </div>
+<br>
+    <div>
+        <label for="msg">Mensagem:</label>
+        <textarea id="msg" cols="2" rows="5"></textarea>
+    </div>
+<br>
+    <div class="botao">
+        <button type="submit">Enviar</button>
+    </div>
+</form>
+
+
+</body>
+</html>

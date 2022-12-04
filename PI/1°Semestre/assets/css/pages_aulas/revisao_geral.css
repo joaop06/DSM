@@ -1,0 +1,61 @@
+#revisao_geral{
+    justify-content: center;
+}
+
+#revisao_geral h2{
+    font-size: 55px;
+    margin-left: 10%;
+    width: 70%;
+    color: #9E0303;
+}
+
+#revisao_geral{
+
+    justify-content: center;
+}
+
+#revisao_geral .page{
+    margin-top: 10.5em;
+    width: 90%;
+}
+
+#revisao_geral h2{
+    font-size: 55px;
+    margin-left: 10%;
+    width: 70%;
+    color: #9E0303;
+}
+
+#revisao_geral #bloco_aulas{
+    margin: 5%;
+}
+
+#revisao_geral .linha_aulas{
+    max-width: 75%;
+    display: flex;
+
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+}
+
+#revisao_geral .aula{
+    padding: 1%;
+    max-width: 45%;
+    margin: 1%;
+}
+
+#revisao_geral .aula .img_aula{
+    justify-content: space-between;
+}
+
+#revisao_geral .aula img{
+    justify-content: right;
+    max-width: 85%;
+}
+
+#revisao_geral .aula h3{
+    margin-top: 0.7%;
+    padding-left: 5%;
+    font-size: 22px;
+}

@@ -1,0 +1,45 @@
+h2{
+	font-size: 30px;
+	margin: 15px auto;
+}
+
+/*Formatação da imagem*/
+#Alan, #Mark, #Maurice{
+	border: 4px solid rgb(255, 255, 255);
+	width:12%;
+	height:12%;
+}
+
+/*Maneira de anular a transição no hover que está puxando do index.css*/
+#Alan:hover, #Mark:hover, #Maurice:hover{
+	width:12%;
+	height:12%;
+}
+
+/*Parágrafos de informações*/
+p{
+	text-align: center;
+	font-weight: normal;
+	font-size: 24px;
+	font-style: italic;
+	font-weight: bold;
+}
+
+/*Conteúdo dos parágrafos de informações*/
+span{
+	font-weight: normal;
+	color: white;
+	font-style: normal;
+	font-weight: normal;
+}
+
+/*Texto de descrição dos gênios*/
+#descritivo_genios{
+	font-size: 18px;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-style: normal;
+	font-weight: normal;
+}

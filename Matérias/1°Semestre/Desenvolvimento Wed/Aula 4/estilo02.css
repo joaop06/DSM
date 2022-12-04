@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(167, 167, 167);
+    color:rgb(0, 0, 0);
+}
+
+p{
+    font-size: large;
+    color: rgb(255, 0, 0);
+}
+
+#conteudo{
+    color: blue;
+    font-size: 22px;
+    background-color: white;
+}
+
+.p1{
+    color: greenyellow;
+    font: 22px;
+    background-color: black;
+}
+
+.p2{
+    color: orangered;
+    font-size: 30px;
+    background-color: rgb(43, 45, 179);
+}
