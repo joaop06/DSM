@@ -141,7 +141,6 @@ header #nav_aulas_cursinho a:hover{
 }
 
 
-
 /*SECTION*/
 section{
     display: flex;
@@ -151,7 +150,6 @@ section{
 .page{
     margin-top: 7.5em;
 }
-
 
 
 /*FOOTER*/
@@ -198,28 +196,4 @@ footer #detalhe_linha{
     *{
         max-width: 100%;
     }
-}
-
-@media screen and (max-width: 1700px) {
-
-}
-
-@media screen and (max-width: 1450px) {
-
-}
-
-@media screen and (max-width: 1200px) {
-
-}
-
-@media screen and (max-width: 900px) {
-
-}
-
-@media screen and (max-width: 600px) {
-
-}
-
-@media screen and (max-width: 510px) {
-
 }

@@ -1,14 +1,19 @@
+body{
+    background-color: white;
+}
+
 #agradecimento{
     border-radius: 10px;
     border: solid 1px black;
     width: fit-content;
     padding: 2em;
     margin-top: 50vh;
-    
 }
+
 #agradecimento p{
     font-size: 20px;
 }
+
 #agradecimento form{
     margin-top: 2%;
     text-align: center;

@@ -3,20 +3,22 @@
     background-color: #cecece;
     padding-bottom: 20px;
     padding-top: 90px;
-
 }
+
 #titulo_diciplina h2{
     font-size: 55px;
     margin-left: 10%;
     width: 70%;
     color: #9E0303;
 }
+
 #titulo_diciplina h3{
     margin-top: 25px;
     text-align: center;
     font-size: 25px;
     height: 50px;
 }
+
 .materia{
     border: solid 2px black;
     border-radius: 10px;
@@ -26,14 +28,17 @@
     box-shadow: 4px 3px 2px rgb(136 136 136);
    
 }
+
 #conteudo_disciplina_1, #conteudo_disciplina_2,#conteudo_disciplina_3{
     display: flex;
     justify-content: space-evenly;
 }
+
 img{
     width: 250px;
     border-radius: 10px;
 }
+
 .page_diciplina{
     width: 100%;
 }
