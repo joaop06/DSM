@@ -1,0 +1,10 @@
+- Apresentação da Matéria
+
+- Aulas:
+	https://honey-sovereign-d68.notion.site/Desenvolvimento-Web-II-95ca6cf2b23e48ba9c918feabd20e0a6
+	
+	- Repositórios Legais:
+		https://github.com/LeonardoRaiz/primeiraAPI
+		https://github.com/LeonardoRaiz/aulas-script
+
+- Inicialização e comandos git (GitLab)
