@@ -1,0 +1,6 @@
+- Apresentação da Matéria
+- Introdução sobre o que será estudado
+- Exemplos de Algoritmos de busca
+
+- Repositório de Códigos:
+	https://github.com/faustocintra/ed-not-2023-1
