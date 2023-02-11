@@ -1,0 +1,3 @@
+- Primeiros passos em Python
+
+- Funções, operadores, condicionais
