@@ -1,0 +1,15 @@
+- Apresentação da Matéria
+
+- Ementa:
+    - Lógica
+    - Conjuntos numéricos
+    - Relação entre os números, operadores (Ex: Igualdade(=): É uma relação de equivalência)
+    - Funções
+    - Grafos
+    - Árvores
+    - Combinatória
+    - Banco de Dados
+
+- Referências:
+    - Fundamentos de Matemática Elementar. Vol 01 -> G.Iezzi
+    - Matemática Para Ciência da Computação -> J. Gersting

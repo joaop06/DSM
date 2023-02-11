@@ -1,0 +1,25 @@
+- Apresentação da Matéria:
+	- Especificar requisitos, projetar e documentar soluções de software baseadas no conhecimento apropriado de acordo com as necessidades do projeto.
+	- Modelar e implantar processos de negócio, propor soluções de TI para aumentar a competitividade das organizações.
+	- Competências Socioemocionais:
+		- Atuar com liderança em função dos contextos do trabalho.
+		- Atuar de forma colaborativa quando do trabalho em equipe.
+		- Contribuir para o alcance de objetivos comuns.
+		- Demonstrar capacidade de adotar a solução mais adequada entre possíveis alternativas.
+		- Demonstrar habilidade de escutar atentamente.
+	- Objetivos de Aprendizagem:
+		- Conhecer e aplicar padrões ao processo de software.
+		- Mapear modelos de representação.
+		- Empregar os diversos tipos de Arquitetura de Software.
+		- Conhecer e aplicar padrões de documentação, integração de sistemas e manutenção.
+	- Ementa:
+		- Modelos de Processo de Desenvolvimento de Software (Espiral e Prototipagem).
+		- Modelagem de Sistemas utilizando (UML).
+		- Modelagem de Processos do Negócio (BPMN).
+		- Técnicas de documentação de Definition of Done (DoD).
+		- Conceitos de Testes de Software.
+		- Implantação de Software.
+		- Evolução funcional.
+		- Manutenção corretiva de Software.
+
+- Descrição referente ao curso, carga horária, tempo mínimo obrigatório de estágio, etc.
