@@ -1,0 +1,95 @@
+- Lógica:
+    Proposição:
+        É considerada proposição toda sentença que pode ser considerada verdadeira ou falsa.
+         - Ex:
+            - a: 1 + 1 = 10 --> Proposição F
+            - b: 1 + 2 = 3  --> Proposição V
+            - c: 2 >= 0 --> Proposição V
+            - d: x + 1 > x + 2 (Não é Proposição)
+            - e: 2 + 7*3 = 5*4 + 3 --> Proposição V
+            - f: 1 + 3 != 1 + 6 --> Proposição V
+            - g: 11 - 4*3 (Não é Proposição)
+    
+
+    Negação:
+        Toda proposição só pode ser verdadeira ou falsa.
+            - Se uma proposição V é negada, se torna uma proposição F
+            - Se uma proposição F é negada, se torna uma proposição V
+            - Ex:
+                - s: Hoje é terça --> V
+                - ~s: Hoje não é terça --> F
+        
+        Para comparações, se utiliza igualdade passará a não usar. Se não utiliza igualdade, passará a usar. Ex:
+            - t: 1 > 2 --> F (não utiliza igualdade, comparação > (maior que))
+            - ~t: 1 <= 2 --> V (Negação acontece ao contrário, sendo agora < (menor que). Passando a utilizar igualdade (=) --> <= (menor ou igual que))
+
+            - r: 2 <= 1 --> F (utiliza igualdade, comparação <= (menor ou igual que))
+            - ~r: 2 > 1 --> V (Negação acontece ao contrário, sendo agora > (maior que). Passando a não utilizar igualdade)
+
+    
+    Ex 2:
+            - a: 3*7 = 21 --> V
+            - ~a: 3*7 != 21 --> F
+
+            - b: 3*(11-7) != 5 --> V
+            - ~b: 3*(11-7) = 5 --> F
+
+            - c: 3*2 + 1 > 4 --> V
+            - ~c: 3*2 + 1 <= 4 --> F
+
+            - d: 5*7 - 2 <= 5*6 --> F
+            - ~d: 5*7 - 2 > 5*6 --> V
+
+            - e: (1/2)**7 < (1/2)³ --> V
+            - ~e: (1/2)**7 => (1/2)³ --> F
+
+            - f: (raiz de 2) < 1 --> F
+            - ~f: (raiz de 2) >= 1 --> V
+
+            - g: -(-4) >= 7 --> F
+            - ~g: -(-4) < 7 --> V
+
+            - h: 3|7 --> F
+            - ~h: 3(sinal de não divide)7 --> V
+
+
+- TABELA DOS CONECTIVOS:
+
+    - Possibilidades:
+        | p | q | p^q | p ou q |
+        | V | V |  V  |   V    |
+        | V | F |  F  |   V    |
+        | F | V |  F  |   V    |
+        | F | F |  F  |   F    |
+
+
+
+- Conectivos:
+
+    - "e" Conjunção -> Trás mais possibilidades, não limitando a expressão
+    - "ou" Disjunção -> Trás sempre duas possibilidades, isso ou aquilo
+
+    - Junção de duas proposições verdadeiras:
+        - u: hoje é terça --> V
+        - v: estamos em fevereiro --> V
+        - u e v: V e V --> V
+    
+    - Junção de uma proposições verdadeira e um falsa:
+        - t: estamos em 2050 --> F
+        - u: hoje é terça --> V
+        - t e u: F e V --> F
+        * A ordem não importa
+    
+    - Junção de duas proposições falsas:
+        - a: está frio --> F
+        - b: hoje é sexta --> F
+        - a e b: F e F --> F
+
+    Ex 3:
+        - a: 3>1 e 4>2 --> V
+        - b: 3>1 ou 3=1 --> V
+        - c: 2|4 ou 2|(4+1) --> F (Correção> V)
+        - d: 3(5+2) = 3*5 + 3*2 e 3|7 --> F
+        - e: 1/2 < 3/4 ou 5|11 --> F (Correção> V)
+        - f: (-1)**6 = -1 e 2**5 < (-2)**7 --> F
+        - g: (raiz de 16) = 6 ou mdc(4, 7) = 2 --> F

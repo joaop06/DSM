@@ -1,0 +1,20 @@
+- Conectivos:
+
+    - "e" Conjunção -> Trás mais possibilidades, não limitando a expressão
+    - "ou" Disjunção -> Trás sempre duas possibilidades, isso ou aquilo
+
+    - Junção de duas proposições verdadeiras:
+        - u: hoje é terça --> V
+        - v: estamos em fevereiro --> V
+        - u e v: V e V --> V
+    
+    - Junção de uma proposições verdadeira e um falsa:
+        - t: estamos em 2050 --> F
+        - u: hoje é terça --> V
+        - t e u: F e V --> F
+        * A ordem não importa
+    
+    - Junção de duas proposições falsas:
+        - a: está frio --> F
+        - b: hoje é sexta --> F
+        - a e b: F e F --> F
