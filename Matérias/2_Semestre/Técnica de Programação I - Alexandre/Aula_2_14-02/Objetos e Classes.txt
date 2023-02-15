@@ -1,0 +1,34 @@
+Objetos:
+    - Uma entidade que possui estado e comprotamento é conhecida como um objeto, por exemplo, cadeira, bicicleta... Pode ser física ou lógica (tangível e intangível). O exemplo de um objeto intangível é o sistema bancário.
+
+    - Um objeto possui três características:
+        - Estado: representa os dados (valor) de um objeto.
+        - Comprotamento: representa o comprotamento (funcionalidade) de um objeto, como depósito, retirada, etc.
+        - Identidade: uma identidade de objeto geralmente é implementada por meio de um ID exclusivo. O valor do ID não é visível para o usuário externo. No entanto, é usado internamente pela JVM para identificar cada obejto exclusivamente.
+
+
+Classe:
+    - Seria um grupo de objetos que possuem propriedades comuns. É um modelo a partir do qual os objetos são criados. É uma entidade lógica. Não pode ser físico.
+
+    Uma classe Java pode conter:
+        - Variáveis
+        - Métodos
+        - Construtores
+        - Blocos
+        - Classe e interface
+
+
+Variável de Instância em Java:
+    - Criada dentro da classe
+
+
+Método em Java:
+    - Em Java, um Método é como uma função usada para expor o comprotamento de um obejto.
+
+    Vantagem do Método:
+        - Reutilização de código.
+        - Otimização de código.
+
+
+Palavra Reservada new:
+    - A palavra-chave new é usada para alocar memória em tempo de execução. Todos os objetos recebem memória na área de memória Heap.
