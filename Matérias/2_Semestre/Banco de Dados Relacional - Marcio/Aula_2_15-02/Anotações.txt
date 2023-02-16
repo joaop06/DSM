@@ -1,0 +1,27 @@
+- Arquiteturas de Desenvolvimento Web:
+
+    - Estruturas Antigas (Web 2.0):
+        Tipo de Arquitetura LAMP (Linux (sistema), Apache (servidor), MySQL (banco de dados), PHP (backend)).
+        Há variação para o windows WAMP (Windows (sistema)...)
+
+    
+    - Estruturas Atualmente:
+        Arquitetura Cliente - Servidor:
+            - Front-End
+            - API
+            - Back-End
+            - Banco de Dados
+            - Servidor
+        
+
+- Stack:
+    Em entrevistas é comum o entrevistador perguntas qual a stack (pilha em português) que utiliza. Quais as tecnologias trabalha.
+
+    Front-End:
+        - HTML
+        - CSS
+        - JS
+        - React
+
+    Back-End:
+        -
