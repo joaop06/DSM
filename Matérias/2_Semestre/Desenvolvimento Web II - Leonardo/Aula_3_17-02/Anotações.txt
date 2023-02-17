@@ -1,0 +1,9 @@
+Passo a passo da criação de uma API simples!
+
+    Passo 1: Criar o package.json via código bash
+        npm init -y
+    
+    Passo 2: Instalar as dependências do nodeJS
+        npm i express nodemon
+    
+    Passo 3: Criar o arquivo principal index.js
