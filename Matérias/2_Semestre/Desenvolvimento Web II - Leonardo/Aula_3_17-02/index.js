@@ -2,7 +2,7 @@ const express = require("express")
 
 const app = express()
 
-var porta = 2222 // Atribuindo o valor da porta a uma variável
+var porta = 8080 // Atribuindo o valor da porta a uma variável
 app.listen(porta, () => {console.log(`O servidor está ativo na porta ${porta}`)}) // Colocando o valor da porta no localhost
 
 
@@ -13,12 +13,6 @@ app.get("/", (req, res) => {
 })
 
 app.post("/getHTML", (req, res) => {
-    if ('nome' in req.body) {
-        const { nome } = req.body;
-        // Restante do código que utiliza a variável 'nome'
-    } else {
-        // Tratar o caso em que a propriedade 'nome' não existe ou é indefinida
-    }
-      
+    const {nome} = req.body
     console.log(`Olá ${nome}!`)
 })
