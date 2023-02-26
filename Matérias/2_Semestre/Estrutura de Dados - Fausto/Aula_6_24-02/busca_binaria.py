@@ -27,11 +27,14 @@ def busca_binaria(lista, val):
 
 
 from data.lista_nomes import nomes
+from time import time
 
 num = str(input('Nome para buscar: ')).upper()
+hora_ini = time()
 buscando = busca_binaria(nomes, num)
+hora_fim = time()
 
 if buscando == -1:
-    print('Nome não encontrado.')
+    print(f'Nome não encontrado.\nTempo gasto: {(hora_fim - hora_ini) * 1000}')
 else:
-    print(f'O nome buscado está na posição {buscando}\n')
+    print(f'O nome buscado está na posição {buscando}\nTempo gasto: {(hora_fim - hora_ini) * 1000}\n')

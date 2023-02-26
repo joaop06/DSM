@@ -40,7 +40,7 @@ sys.dont_write_bytecode = True      # Impeede a criação do cache
 
 from time import time
 
-from data.lista_nomes import nomes
+from data.nomes_desord import nomes
 def teste_busca_nome(nome):
     hora_ini = time()
     resultado = busca_seq(nomes, nome)
