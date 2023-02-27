@@ -15,4 +15,5 @@ app.get("/", (req, res) => {
 app.post("/getHTML", (req, res) => {
     const {nome} = req.body
     console.log(`Olá ${nome}!`)
+    nomes.push(nome);
 })
