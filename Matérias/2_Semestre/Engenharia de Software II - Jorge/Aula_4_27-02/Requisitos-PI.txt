@@ -1,0 +1,15 @@
+PI 2° Semestre
+
+    - Grupos de até 4 pessoas
+        - Scruum Master
+        - P.O.
+        - 2 Devs
+
+    - Tema
+        A definir pelo grupo
+    
+    - Aplicação: 3 Funcionalidades
+        - Página Web (Front)
+        - Backend
+        - BD
+        - API
