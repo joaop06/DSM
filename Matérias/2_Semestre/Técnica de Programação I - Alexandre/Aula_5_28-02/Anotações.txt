@@ -1,0 +1,37 @@
+Palavras-Chave:
+    - O Java possui 53 palavras reservadas que não podem ser usadas para nomes de variáveis.
+
+Operadores Aritiméticos:
+    +   operador de adição
+    -   operador subtração
+    *   operador de multiplicação
+    /   operador de divisão
+    %   operador de módulo (ou resto da divisão)
+
+
+Operadores de Incremento e Decremento:
+    ++  Incremento
+    --  Ddecremento
+    Incrementam ou decrementam em 1 o valor da variável.
+
+    Exemplo de uso:
+        int numero = 5;
+        numero++;
+        numero--;
+
+
+Operadores de Igualdade:
+    ==  Verificar se uma variável é IGUAL a outra.
+    !=  Verificar se uma variável é DIFERENTE de outra.
+
+
+Operadores Relacionais:
+    > Verificar se uma variável é maior que outra.
+    >=  Verificar se uma variável é maior ou igual a outra
+    <   Se uma variável é menor que outra.
+    <=  Se uma variável é menor ou igual a outra.
+
+
+Operadores de Lógicos:
+    &&  Quando desejamos que AS DUAS expressões sejam VERDADEIRAS.
+    ||  Quando precisamos que PELO MENOS UMA das expressões seja VERDADEIRAS.
