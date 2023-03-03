@@ -31,12 +31,16 @@ def busca_binaria(lista, val):
 from data.lista_nomes import nomes
 from time import time
 
-num = str(input('Nome para buscar: ')).upper()
-hora_ini = time()
-buscando = busca_binaria(nomes, num)
-hora_fim = time()
+nome = ['JOAO', 'LIVIA', 'MARCOS', 'BRENDA', 'ZELIA', 'ANA', 'PAULO', 'BÇJ--SJS', 'MARIA', '**10**']
+for i in range(10):
+    #nome = str(input('Nome para buscar: ')).upper()
+    hora_ini = time()
+    print(hora_ini)
+    buscando = busca_binaria(nomes, nome[i])
+    hora_fim = time()
+    print(hora_fim)
 
-if buscando == -1:
-    print(f'Nome não encontrado.\nTempo gasto: {(hora_fim - hora_ini) * 1000}')
-else:
-    print(f'O nome buscado está na posição {buscando}\nTempo gasto: {(hora_fim - hora_ini) * 1000}\n')
+    if buscando == -1:
+        print(f'Nome não encontrado.\nTempo gasto: {(hora_fim - hora_ini) * 1000} // Comparações: {cont}')
+    else:
+        print(f'{nome[i]} está na posição {buscando}\nTempo gasto: {(hora_fim - hora_ini) * 1000} // Comparações: {cont}\n')
