@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="result">
+        <table>
+          <tr>
+            <td><button @click="addToResult(7)">7</button></td>
+            <td><button @click="addToResult(8)">8</button></td>
+            <td><button @click="addToResult(9)">9</button></td>
+            <td><button @click="addToResult('/')">÷</button></td>
+          </tr>
+          <tr>
+            <td><button @click="addToResult(4)">4</button></td>
+            <td><button @click="addToResult(5)">5</button></td>
+            <td><button @click="addToResult(6)">6</button></td>
+            <td><button @click="addToResult('*')">x</button></td>
+          </tr>
+          <tr>
+            <td><button @click="addToResult(1)">1</button></td>
+            <td><button @click="addToResult(2)">2</button></td>
+            <td><button @click="addToResult(3)">3</button></td>
+            <td><button @click="addToResult('-')">-</button></td>
+          </tr>
+          <tr>
+            <td><button @click="addToResult(0)">0</button></td>
+            <td><button @click="addToResult('.')">.</button></td>
+            <td><button @click="calculate()">=</button></td>
+            <td><button @click="addToResult('+')">+</button></td>
+          </tr>
+          <tr>
+            <td colspan="4"><button @click="clear()">Clear</button></td>
+          </tr>
+        </table>
+    </div>
+
+      <script>
+        new Vue({
+            el: '#app',
+            data: {
+                result: ''
+            },
+            methods: {
+                addToResult: function (value) {
+                this.result += value;
+                },
+                calculate: function () {
+                this.result = eval(this.result);
+                },
+                clear: function () {
+                this.result = '';
+                }
+            }
+        });
+
+      </script>
+</body>
+</html>
