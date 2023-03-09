@@ -1,4 +1,4 @@
-https://jogo-bd.000webhost.com/
+https://jogo-bd.000webhostapp.com/
 Name BD: bd_login
 User BD: joaop
 Senha BD: SAyVHB[>uR!ty9<=

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+      #app{
+        margin: auto;
+        padding: 1%;
+        width: 50vw;
+        box-sizing: border-box;
+      }
+
+      li{
+        list-style: none;
+      }
+
+      ul, li{
+        margin: 0;
+        padding: 0;        
+      }
+
+      .linha{
+        display: flex;
+        margin: auto;
+        max-width: 11vw;
+      }
+
+      .linha > li{
+        margin: auto;
+      }
+
+      button{
+        width: 50px;
+        height: 30px;
+      }
+
+      input{
+        width: 200px;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+      }
+
+    </style>
+</head>
+<body>
+  <div id="app">
+    
+    <input type="text" v-model="result"></li>
+    
+    <ul>
+      <li id="l1">
+        <ul class="linha">
+          <li><button @click="add(7)">7</button></li>
+          <li><button @click="add(8)">8</button></li>
+          <li><button @click="add(9)">9</button></li>
+          <li><button @click="add('/')">÷</button></li>
+        </ul>
+      </li>
+      
+
+      <li id="2">
+        <ul class="linha">
+          <li><button @click="bot(4)">4</button></li>
+          <li><button @click="bot(5)">5</button></li>
+          <li><button @click="bot(6)">6</button></li>
+          <li><button @click="bot('*')">x</button></li>
+        </ul>
+      </li>
+
+
+      <li id="3">
+        <ul class="linha">
+          <li><button @click="bot(1)">1</button></li>
+          <li><button @click="bot(2)">2</button></li>
+          <li><button @click="bot(3)">3</button></li>
+          <li><button @click="bot('-')">-</button></li>
+        </ul>
+      </li>
+
+
+      <li id="4">
+        <ul class="linha">
+          <li><button @click="bot(0)">0</button></li>
+          <li><button @click="bot('.')">.</button></li>
+          <li><button @click="calcular()">=</button></li>
+          <li><button @click="bot('+')">+</button></li>
+        </ul>
+      </li>
+
+
+      <li id="5">
+        <ul class="linha">
+          <li colspan="4"><button @click="limpar()">Clear</button></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+      <script>
+        new Vue({
+            el: '#app',
+            data: {
+                result: ''
+            },
+            methods: {
+                bot: function (valor) {
+                this.result += valor;
+                },
+                calcular: function () {
+                this.result = eval(this.result);
+                },
+                limpar: function () {
+                this.result = '';
+                }
+            }
+        });
+
+      </script>
+</body>
+</html>
