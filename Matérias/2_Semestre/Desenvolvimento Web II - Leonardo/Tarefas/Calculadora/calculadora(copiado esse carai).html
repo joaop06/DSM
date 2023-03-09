@@ -8,35 +8,58 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
+  <div id="app">
+    <div id="line1">
+      <ul>
+        <li><button @click="(7)">7</button></li>
+        <li><button @click="addToResult(8)">8</button></li>
+        <li><button @click="addToResult(9)">9</button></li>
+        <li><button @click="addToResult('/')">÷</button></li>
+      </ul>
+    </div>
+    
+
+    <div id="line2">
+
+    </div>
+
+
+    <div id="line3">
+
+    </div>
+
+
+    <div id="line4">
+
+    </div>
+  </div>
+
     <div id="app">
         <input type="text" v-model="result">
         <table>
           <tr>
-            <td><button @click="addToResult(7)">7</button></td>
-            <td><button @click="addToResult(8)">8</button></td>
-            <td><button @click="addToResult(9)">9</button></td>
-            <td><button @click="addToResult('/')">÷</button></td>
+
           </tr>
           <tr>
-            <td><button @click="addToResult(4)">4</button></td>
-            <td><button @click="addToResult(5)">5</button></td>
-            <td><button @click="addToResult(6)">6</button></td>
-            <td><button @click="addToResult('*')">x</button></td>
+            <td><button @click="bot(4)">4</button></td>
+            <td><button @click="bot(5)">5</button></td>
+            <td><button @click="bot(6)">6</button></td>
+            <td><button @click="bot('*')">x</button></td>
           </tr>
           <tr>
-            <td><button @click="addToResult(1)">1</button></td>
-            <td><button @click="addToResult(2)">2</button></td>
-            <td><button @click="addToResult(3)">3</button></td>
-            <td><button @click="addToResult('-')">-</button></td>
+            <td><button @click="bot(1)">1</button></td>
+            <td><button @click="bot(2)">2</button></td>
+            <td><button @click="bot(3)">3</button></td>
+            <td><button @click="bot('-')">-</button></td>
           </tr>
           <tr>
-            <td><button @click="addToResult(0)">0</button></td>
-            <td><button @click="addToResult('.')">.</button></td>
-            <td><button @click="calculate()">=</button></td>
-            <td><button @click="addToResult('+')">+</button></td>
+            <td><button @click="bot(0)">0</button></td>
+            <td><button @click="bot('.')">.</button></td>
+            <td><button @click="calcular()">=</button></td>
+            <td><button @click="bot('+')">+</button></td>
           </tr>
           <tr>
-            <td colspan="4"><button @click="clear()">Clear</button></td>
+            <td colspan="4"><button @click="limpar()">Clear</button></td>
           </tr>
         </table>
     </div>
@@ -48,13 +71,13 @@
                 result: ''
             },
             methods: {
-                addToResult: function (value) {
-                this.result += value;
+                bot: function (valor) {
+                this.result += valor;
                 },
-                calculate: function () {
+                calcular: function () {
                 this.result = eval(this.result);
                 },
-                clear: function () {
+                limpar: function () {
                 this.result = '';
                 }
             }
