@@ -25,8 +25,13 @@ public class GrausCparaF {
         graus = input.nextInt();
         
         if (unid == "C"){
-            result = (graus - 32) * fator2;
+            result = (graus - fator2) + 32;
             System.out.printf("%dºC convertido é %dºF", graus, result);
+        }
+        
+        if (unid == "F"){
+            result = (graus - 32) * fator2;
+            System.out.printf("%dºF convertido é %dºC", graus, result);
         }
 
     }
