@@ -8,10 +8,47 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <style>
+      body{
+        background-color: rgb(0, 0, 30);
+      }
       #app{
         padding: 1%;
-        width: 200px;
+        width: 35vw;
         box-sizing: border-box;
+        border: rgb(0, 0, 255) 4px solid;
+        margin: auto;
+        height: 50vh;
+        background-color: rgb(0, 0, 120);
+      }
+
+      input{
+        width: 100%;
+        height: 40%;
+        margin-bottom: 3%;
+        margin: 0;
+        padding: 0;
+        background-color: rgb(0, 0, 30);
+        color: white;
+        font-size: 32px;
+
+      }
+
+      input::placeholder{
+        color: rgb(70, 70, 70);
+      }
+
+      #teclado{
+        margin-top: 5%;
+        width: 100%;
+        height: 60%;
+      }
+
+      #teclado > ul{
+        height: 100%;
+      }
+
+      #botoes{
+        height: 100%;
       }
 
       li{
@@ -26,98 +63,102 @@
       .linha{
         display: flex;
         justify-content: space-between;
+        width: 100%;
       }
 
       .linha > li{
         margin: auto;
+        width: 25%;
+        height: 25%;
       }
 
       button{
-        width: 50px;
-        height: 30px;
+        width: 100%;
+        height: 100%;
       }
 
-      input{
-        width: 190px;
-        height: 30px;
-        margin-bottom: 3%;
-      }
+
 
     </style>
 </head>
 <body>
   <div id="app">
     
-    <input type="text" v-model="result"></li>
+    <input type="text" v-model="result" placeholder="Calcule"></li>
     
-    <ul>
-      <li id="l1">
-        <ul class="linha">
-          <li><button @click="add(7)">7</button></li>
-          <li><button @click="add(8)">8</button></li>
-          <li><button @click="add(9)">9</button></li>
-          <li><button @click="add('/')">÷</button></li>
-        </ul>
-      </li>
-      
+    <div id="teclado">
+      <ul id="botoes">
+        <li id="l1">
+          <ul class="linha">
+            <li><button @click="add(7)">7</button></li>
+            <li><button @click="add(8)">8</button></li>
+            <li><button @click="add(9)">9</button></li>
+            <li><button @click="add('/')">÷</button></li>
+          </ul>
+        </li>
+        
 
-      <li id="2">
-        <ul class="linha">
-          <li><button @click="bot(4)">4</button></li>
-          <li><button @click="bot(5)">5</button></li>
-          <li><button @click="bot(6)">6</button></li>
-          <li><button @click="bot('*')">x</button></li>
-        </ul>
-      </li>
-
-
-      <li id="3">
-        <ul class="linha">
-          <li><button @click="bot(1)">1</button></li>
-          <li><button @click="bot(2)">2</button></li>
-          <li><button @click="bot(3)">3</button></li>
-          <li><button @click="bot('-')">-</button></li>
-        </ul>
-      </li>
+        <li id="2">
+          <ul class="linha">
+            <li><button @click="bot(4)">4</button></li>
+            <li><button @click="bot(5)">5</button></li>
+            <li><button @click="bot(6)">6</button></li>
+            <li><button @click="bot('*')">x</button></li>
+          </ul>
+        </li>
 
 
-      <li id="4">
-        <ul class="linha">
-          <li><button @click="bot(0)">0</button></li>
-          <li><button @click="bot('.')">.</button></li>
-          <li><button @click="calcular()">=</button></li>
-          <li><button @click="bot('+')">+</button></li>
-        </ul>
-      </li>
+        <li id="3">
+          <ul class="linha">
+            <li><button @click="bot(1)">1</button></li>
+            <li><button @click="bot(2)">2</button></li>
+            <li><button @click="bot(3)">3</button></li>
+            <li><button @click="bot('-')">-</button></li>
+          </ul>
+        </li>
 
 
-      <li id="5">
-        <ul class="linha">
-          <li colspan="4"><button @click="limpar()">Clear</button></li>
-        </ul>
-      </li>
-    </ul>
+        <li id="4">
+          <ul class="linha">
+            <li><button @click="bot(0)">0</button></li>
+            <li><button @click="bot('.')">.</button></li>
+            <li><button @click="calcular()">=</button></li>
+            <li><button @click="bot('+')">+</button></li>
+          </ul>
+        </li>
+
+
+        <li id="5">
+          <ul class="linha">
+            <li colspan="4"><button @click="limpar()">Clear</button></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 
-      <script>
-        new Vue({
-            el: '#app',
-            data: {
-                result: ''
-            },
-            methods: {
-                bot: function (valor) {
-                this.result += valor;
-                },
-                calcular: function () {
-                this.result = eval(this.result);
-                },
-                limpar: function () {
-                this.result = '';
-                }
-            }
-        });
+<script>
+  const { createApp } = Vue;
+  createApp({
+    data() {
+      return {
+        result: "",
+      }
+    },
+    methods: {
+      bot: function (valor){
+        this.result += valor;
+      },
 
-      </script>
+      calcular: function (){
+        this.result = eval(this.result)
+      },
+
+      limpar: function (){
+        this.result = ""
+      }
+    }
+  }).mount("#app")
+</script>
 </body>
 </html>
