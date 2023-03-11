@@ -10,14 +10,21 @@
     <style>
       body{
         background-color: rgb(10, 10, 10);
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
       }
+
       #app{
+        padding-top: 15%;
         padding: 1%;
-        width: 35vw;
+        width: 25vw;
+        max-width: 400px;
         box-sizing: border-box;
         border: rgb(60, 60, 60) 4px solid;
         margin: auto;
-        height: 50vh;
+        height: 70vh;
         background-color: rgb(30, 30, 30);
         border-radius: 5%;
       }
@@ -31,127 +38,131 @@
         background-color: rgb(50, 50, 50);
         color: white;
         font-size: 32px;
+        border: none;
         outline: none;
         border-radius: 5%;
+        text-align: right;
+        padding-right: 10%;
+        box-sizing: border-box;
       }
 
       input::placeholder{
         color: rgb(104, 104, 104);
         text-align: right;
-        padding-right: 5%;
-
       }
 
       #teclado{
         margin-top: 5%;
         width: 100%;
         height: 60%;
-      }
-
-      #teclado > ul{
-        height: 100%;
-      }
-
-      #botoes{
-        height: 100%;
-      }
-
-      li{
-        list-style: none;
+        padding: 1.5%;
+        box-sizing: border-box;
       }
 
       ul, li{
         margin: 0;
-        padding: 0;        
+        padding: 0;
+        list-style: none;
       }
 
-      .linha{
+      #teclado > .linha{
         display: flex;
         justify-content: space-between;
         width: 100%;
+        height: 20%;
       }
-      
 
       .linha > li{
         margin: auto;
         width: 25%;
-        height: 100%;
+        height: 90%;
       }
 
       button{
         width: 100%;
         height: 100%;
-        background-color: rgb(90, 90, 90);
+        background-color: rgb(110, 110, 110);
         color: white;
+
       }
 
       button:hover{
-        background-color: rgb(120, 120, 120);
+        background-color: rgb(164, 164, 164);
+      }
+
+      .num{
+
+        background-color: rgba(83, 183, 255, 0.380);
+      }
+
+      .num:hover{
+        background-color: rgba(83, 183, 255, 0.600);
+      }
+
+      .nada > button:hover{
+        background-color: rgb(110, 110, 110);
       }
 
       #calcular{
         background-color: rgb(0, 116, 194);
       }
 
-
+      #calcular:hover{
+        background-color: rgb(40, 159, 237);
+      }
 
     </style>
 </head>
 <body>
   <div id="app">
-    
+
     <input type="text" v-model="result" placeholder="Calcule"></li>
     
     <div id="teclado">
-      <ul id="botoes">
-        <li id="l1">
-          <ul class="linha">
-            <li><button @click="add(7)">7</button></li>
-            <li><button @click="add(8)">8</button></li>
-            <li><button @click="add(9)">9</button></li>
-            <li><button @click="add('/')">÷</button></li>
-          </ul>
-        </li>
-        
+      
+      <ul class="linha">
+        <li class="nada"><button></button></li>
+        <li class="nada"><button></button></li>
+        <li><button @click="limpar()">C</button></li>
+        <li><button @click="bot('/')">÷</button></li>
+      </ul>
 
-        <li id="2">
-          <ul class="linha">
-            <li><button @click="bot(4)">4</button></li>
-            <li><button @click="bot(5)">5</button></li>
-            <li><button @click="bot(6)">6</button></li>
-            <li><button @click="bot('*')">x</button></li>
-          </ul>
-        </li>
+      <ul class="linha">
+        <li><button class="num" @click="bot(7)">7</button></li>
+        <li><button class="num" @click="bot(8)">8</button></li>
+        <li><button class="num" @click="bot(9)">9</button></li>
+        <li><button @click="bot('*')">x</button></li>
+      </ul>
+      
 
-
-        <li id="3">
-          <ul class="linha">
-            <li><button @click="bot(1)">1</button></li>
-            <li><button @click="bot(2)">2</button></li>
-            <li><button @click="bot(3)">3</button></li>
-            <li><button @click="bot('-')">-</button></li>
-          </ul>
-        </li>
+      <ul class="linha">
+        <li><button class="num" @click="bot(4)">4</button></li>
+        <li><button class="num" @click="bot(5)">5</button></li>
+        <li><button class="num" @click="bot(6)">6</button></li>
+        <li><button @click="bot('-')">-</button></li>
+      </ul>
 
 
-        <li id="4">
-          <ul class="linha">
-            <li><button @click="bot(0)">0</button></li>
-            <li><button @click="bot('.')">.</button></li>
-            <li><button id="calcular" @click="calcular()">=</button></li>
-            <li><button @click="bot('+')">+</button></li>
-          </ul>
-        </li>
+      <ul class="linha">
+        <li><button class="num" @click="bot(1)">1</button></li>
+        <li><button class="num" @click="bot(2)">2</button></li>
+        <li><button class="num" @click="bot(3)">3</button></li>
+        <li><button @click="bot('+')">+</button></li>
+      </ul>
 
-
-        <li id="5">
-          <ul class="linha">
-            <li colspan="4"><button @click="limpar()">Clear</button></li>
-          </ul>
-        </li>
+      <ul class="linha">
+        <li class="nada"><button></button></li>
+        <li><button @click="bot(0)">0</button></li>
+        <li><button @click="bot('.')">.</button></li>
+        <li><button id="calcular" @click="calcular()">=</button></li>
       </ul>
     </div>
   </div>
+
+
+</body>
+</html>
+
 
 <script>
   const { createApp } = Vue;
@@ -176,5 +187,3 @@
     }
   }).mount("#app")
 </script>
-</body>
-</html>
