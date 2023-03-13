@@ -4,13 +4,15 @@
     overflow: hidden;
 }
 
-header{
+#cabecalho{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
     height: 10vh;
     background-color: rgb(172, 222, 255);
+    border-bottom: 2px coral solid;
+    box-shadow: 10px 50px 4px;
 }
 
 #logo{

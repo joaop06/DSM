@@ -3,15 +3,13 @@
     padding: 0;
     
 }
-html, body, header, iframe{
+html, body, header, object{
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
 }
 
 header{
     height: 10vh;
-    overflow: hidden;
     position: fixed;
 }
 
