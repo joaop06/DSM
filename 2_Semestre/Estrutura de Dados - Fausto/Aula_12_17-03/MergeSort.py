@@ -80,4 +80,40 @@ nums = [6, 4, 2, 0, 9, 5, 1, 8, 3, 7]
 # Reseta as variáveis de estatística
 divs = juncs = comps = 0
 resultado = merge_sort(nums)
+print("Lista original:", nums)
+print("Lista ordenada:", resultado)
+print(f"Divisões: {divs}, junções: {juncs}, comparações: {comps}")
+
+			
+pior_caso = [9, 0, 8, 1, 7, 2, 6, 3, 5, 4]
+resultado = merge_sort(nums)
 print(f'\n\n\nLista Nomes Ordenada: {resultado}\n\nDivisões: {divs}  /  Junções: {juncs}  /  Comparações: {comps}.')
+
+
+
+
+####################################################
+
+from time import time
+import sys
+import tracemalloc
+sys.dont_write_bytecode = True # Impede a creação do cache
+
+from data.nomes_desord import nomes
+
+# Pega apenas os 25k primeiros nomes
+# nomes = nomes[:25000]
+
+divs = juncs = comps = 0
+
+
+tracemalloc.start()
+hora_ini = time()
+resultado = merge_sort(nomes)
+hora_fim = time()
+
+
+mem_atual, mem_pico = tracemalloc.get_traced_memory() # Captura as informações de gasto de memória
+
+
+print(f'\n\n\nLista Nomes Ordenada: {resultado}\n\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nDivisões: {divs}  /  Junções: {juncs}  /  Comparações: {comps}.\n\n')

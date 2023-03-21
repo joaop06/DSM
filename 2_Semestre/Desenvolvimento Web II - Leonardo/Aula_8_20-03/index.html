@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Aula 8</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="toggleMsg" >{{ isMsgAtiva ? 'Fecha MSG' : 'Abrir MSG'}}</button>
+        <br>
+
+        <span v-if="isMsgAtiva">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni quas soluta aut.</span>
+        <hr>
+
+        <button @click="lampada">{{luz}}</button>
+
+        <img v-if="luz" src="" alt="">
+        <img v-else src="" alt="">
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
