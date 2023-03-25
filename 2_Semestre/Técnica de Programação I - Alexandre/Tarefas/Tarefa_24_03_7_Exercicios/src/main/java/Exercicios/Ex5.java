@@ -14,16 +14,17 @@ public class Ex5 {
         
         System.out.print("Digite um número: ");
         int num = input.nextInt();
-        int divs = 0;
+        int divs[];
+        divs = new int[num];
         
         for (int i = 1; i < num; i++){
             if (num%i==0){
-                divs += i;
+                divs.append();
             }
         }
         
         if(num == divs){
-            System.out.printf("%d é Perfeito!", num);
+            System.out.printf("%d é Perfeito! Divisores: ", num);
         } else{
             System.out.printf("%d NÃO é perfeito.", num);
         }
