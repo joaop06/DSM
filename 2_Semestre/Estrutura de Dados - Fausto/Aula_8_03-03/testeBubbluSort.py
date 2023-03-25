@@ -45,7 +45,8 @@ from time import time
 import sys
 sys.dont_write_bytecode = True      # Impede a criação do cache
 
-from data.nomes_desord import nomes
+sys.path.append('./Material/Aulas_Algoritmos_Ordenacao/data')
+from nomes_desord import nomes
 
 
 nomes = nomes[:25000]

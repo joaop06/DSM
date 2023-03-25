@@ -67,3 +67,27 @@ passadas = comps = trocas = 0
 quick_sort(nums)
 print("Lista Ordenada: ", nums)
 print(f"Comparações: {comps}  /  Trocas: {trocas}  /  Passadas: {passadas}")
+
+
+###############################################################################################################
+
+from time import time
+import sys
+import tracemalloc
+sys.dont_write_bytecode = True # Impede a creação do cache
+sys.path.append('./Material/Aulas_Algoritmos_Ordenacao/data')
+from nomes_desord import nomes
+
+
+# Pega apenas os 25k primeiros nomes
+# nomes = nomes[:25000]
+passadas = comps = trocas = 0
+tracemalloc.start()
+hora_ini = time()
+resultado = quick_sort(nomes)
+hora_fim = time()
+
+
+mem_atual, mem_pico = tracemalloc.get_traced_memory() # Captura as informações de gasto de memória
+
+print(f'\n\n\nLista Nomes Ordenada: {resultado}\n\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comps}  /  Trocas: {trocas}  /  Passadas: {passadas}.\n\n')

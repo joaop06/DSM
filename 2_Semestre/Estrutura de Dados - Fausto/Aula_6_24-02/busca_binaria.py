@@ -28,7 +28,9 @@ def busca_binaria(lista, val):
     return -1
 
 
-from data.lista_nomes import nomes
+import sys
+sys.path.append('./Material/Aulas_Algoritmos_Ordenacao/data')
+from nomes_desord import nomes
 from time import time
 
 num = str(input('Nome para buscar: ')).upper()

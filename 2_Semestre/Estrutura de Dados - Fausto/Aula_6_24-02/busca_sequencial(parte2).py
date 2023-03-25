@@ -39,8 +39,10 @@ import sys
 sys.dont_write_bytecode = True      # Impeede a criação do cache
 
 from time import time
+import sys
 
-from data.nomes_desord import nomes
+sys.path.append('./Material/Aulas_Algoritmos_Ordenacao/data')
+from nomes_desord import nomes
 def teste_busca_nome(nome):
     hora_ini = time()
     resultado = busca_seq(nomes, nome)

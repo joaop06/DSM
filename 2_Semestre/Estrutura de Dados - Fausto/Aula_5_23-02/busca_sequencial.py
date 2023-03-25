@@ -35,7 +35,9 @@ print(f'Posição do valor 33 na lista: {resultado}\n')
 
 '''TESTE COM NOMES'''
 
-from data.nomes_desord import nomes
+import sys
+sys.path.append('./Material/Aulas_Algoritmos_Ordenacao/data')
+from nomes_desord import nomes
 
 print('Busca pelo nome JOAO')
 resultado = busca_seq(nomes, 'JOAO')
