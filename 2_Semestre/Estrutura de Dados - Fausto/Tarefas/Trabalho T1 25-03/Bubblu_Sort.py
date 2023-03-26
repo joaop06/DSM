@@ -20,7 +20,7 @@ def bubble_sort(empresas):
                 trocas += 1
         
         if not trocou:
-            break
+            break   
 
 
 import sys
