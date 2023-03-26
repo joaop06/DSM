@@ -16,6 +16,25 @@ def bubble_sort(empresas):
 
         if not trocou:
             break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
 #####################################
 import sys
 sys.dont_write_bytecode = True
