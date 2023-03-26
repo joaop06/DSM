@@ -19,14 +19,14 @@ def bubble_sort(empresas):
 #####################################
 import sys
 sys.dont_write_bytecode = True
-from dados.emp100mil import empresas
-from time import time
-import tracemalloc
 
+
+import tracemalloc
 tracemalloc.start()
 
 
-empresas = empresas[:2500]
+from time import time
+from dados.emp100mil import empresas
 hora_ini = time()
 bubble_sort(empresas)
 hora_fim = time()
