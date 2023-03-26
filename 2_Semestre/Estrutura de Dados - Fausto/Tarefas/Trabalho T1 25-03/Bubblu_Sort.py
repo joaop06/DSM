@@ -32,4 +32,4 @@ bubble_sort(empresas)
 hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
-print(f'\n\n\nTempo Gasto: {hora_fim - hora_ini}\n\nPico de Memória: {mem_pico / 1024 / 1024} MB\n\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.')
+print(f'\n\n\nTempo Gasto: {hora_fim - hora_ini}\n\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
