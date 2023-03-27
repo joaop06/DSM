@@ -26,7 +26,7 @@ tracemalloc.start()
 
 ###########################
 
-'''100 mil empresas'''
+'''100 mil Empresas'''
 
 from time import time
 from dados.emp100mil import empresas
@@ -35,12 +35,12 @@ bubble_sort(empresas)
 hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
-print(f'\n\n\nTempo Gasto: {hora_fim - hora_ini}\n\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
+print(f'\n\n\n100 mil Empresas:\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
 
 
 ###########################
 
-'''50 mil empresas'''
+'''50 mil Empresas'''
 
 from dados.emp50mil import empresas
 hora_ini = time()
@@ -48,14 +48,13 @@ bubble_sort(empresas)
 hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
-print("50 mil Empresas!!")
-print(f'\n\n\nTempo Gasto: {hora_fim - hora_ini}\n\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
+print(f'\n\n\n50 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
 
 
 
 ###########################
 
-'''25 mil empresas'''
+'''25 mil Empresas'''
 
 from dados.emp25mil import empresas
 hora_ini = time()
@@ -63,14 +62,13 @@ bubble_sort(empresas)
 hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
-print("25 mil Empresas!!")
-print(f'\n\n\nTempo Gasto: {hora_fim - hora_ini}\n\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
+print(f'\n\n\n25 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
 
 
 
 ###########################
 
-'''10 mil empresas'''
+'''10 mil Empresas'''
 
 from dados.emp10mil import empresas
 hora_ini = time()
@@ -78,5 +76,4 @@ bubble_sort(empresas)
 hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
-print("10 mil Empresas!!")
-print(f'\n\n\nTempo Gasto: {hora_fim - hora_ini}\n\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
+print(f'\n\n\n10 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
