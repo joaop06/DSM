@@ -1,11 +1,8 @@
 def merge_sort_ITERATIVO(empresas):
-    # Inicia com o menor tamanho de partição de 2^0 = 1
     tam_part = 1
     n = len(empresas)
     
-    # O tamanho da sublista cresce em potências de 2
     while (tam_part < n):
-        # Inicia sempre pela esquerda
         esq = 0
         while (esq < n):
             dir = min(esq + (tam_part * 2 - 1), n - 1)
