@@ -55,9 +55,14 @@ sys.path.append('./Material/Aulas_Algoritmos_Ordenacao/data')
 from nomes_desord import nomes
 
 
-nomes = nomes[:25000]
+import tracemalloc
+tracemalloc.start()
+
+nomes = nomes[:10000]
 hora_ini = time()
 bubble_sort(nomes)
 hora_fim = time()
+mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
-print(f'\n\n\nLista Nomes Ordenada: {nomes}\n\nTempo Gasto: {hora_fim - hora_ini}  //  Comparações: {comps}, Trocas: {trocas}, Passadas: {passadas}.')
+
+print(f'\n\n\nLista Nomes Ordenada: {nomes}\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB  //  Comparações: {comps}, Trocas: {trocas}, Passadas: {passadas}.')
