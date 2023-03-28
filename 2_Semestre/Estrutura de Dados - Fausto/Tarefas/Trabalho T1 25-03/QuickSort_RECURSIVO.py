@@ -66,9 +66,8 @@ quick_sort_RECURSIVO(empresas)
 hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
-print(f'\n\n\n50 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')'''
-
-
+print(f'\n\n\n50 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
+'''
 
 ######################################################
 
@@ -80,9 +79,8 @@ quick_sort_RECURSIVO(empresas)
 hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
-print(f'\n\n\n25 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')'''
-
-
+print(f'\n\n\n25 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
+'''
 
 ######################################################
 
@@ -94,4 +92,6 @@ quick_sort_RECURSIVO(empresas)
 hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
-print(f'\n\n\n10 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')'''
+
+print(f'\n\n\n10 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
+'''
