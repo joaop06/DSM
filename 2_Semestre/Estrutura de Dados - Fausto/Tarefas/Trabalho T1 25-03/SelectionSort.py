@@ -20,8 +20,6 @@ def selection_sort(empresas):
 
 ############################################################################################################
 
-
-
 import sys
 sys.dont_write_bytecode = True
 
@@ -29,24 +27,18 @@ import tracemalloc
 tracemalloc.start()
 from time import time
 
-
-opcao_alg = input(int('''Escolha o Algoritmo:
-[1] Bubblu Sort
-[2] Selection Sort
-[3]'''))
-
 ######################################################
 
 '''100 mil Empresas'''
 
-from dados.emp100mil import empresas
+'''from dados.emp100mil import empresas
 hora_ini = time()
 selection_sort(empresas)
 hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
 print(f'\n\n\n100 mil Empresas:\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
-
+'''
 
 ######################################################
 
@@ -80,11 +72,10 @@ print(f'\n\n\n25 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Mem
 
 '''10 mil Empresas'''
 
-'''from dados.emp10mil import empresas
+from dados.emp10mil import empresas
 hora_ini = time()
 selection_sort(empresas)
 hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
 print(f'\n\n\n10 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
-'''
