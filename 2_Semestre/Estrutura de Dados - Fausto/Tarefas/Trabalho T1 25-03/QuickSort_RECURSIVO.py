@@ -35,19 +35,19 @@ def quick_sort_RECURSIVO(empresas, ini=0, fim=None):
     quick_sort_RECURSIVO(empresas, div+1, fim)
 
 ############################################################################################################
-
 import sys
 sys.dont_write_bytecode = True
 
+
 import tracemalloc
-tracemalloc.start()
 from time import time
 
-######################################################
+###########################
 
 '''100 mil Empresas'''
 
 from dados.emp100mil import empresas
+tracemalloc.start()
 hora_ini = time()
 quick_sort_RECURSIVO(empresas)
 hora_fim = time()
@@ -56,11 +56,12 @@ mem_atual, mem_pico = tracemalloc.get_traced_memory()
 print(f'\n\n\n100 mil Empresas:\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
 
 
-######################################################
+###########################
 
 '''50 mil Empresas'''
 
 '''from dados.emp50mil import empresas
+tracemalloc.start()
 hora_ini = time()
 quick_sort_RECURSIVO(empresas)
 hora_fim = time()
@@ -69,11 +70,12 @@ mem_atual, mem_pico = tracemalloc.get_traced_memory()
 print(f'\n\n\n50 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
 '''
 
-######################################################
+###########################
 
 '''25 mil Empresas'''
 
 '''from dados.emp25mil import empresas
+tracemalloc.start()
 hora_ini = time()
 quick_sort_RECURSIVO(empresas)
 hora_fim = time()
@@ -82,16 +84,16 @@ mem_atual, mem_pico = tracemalloc.get_traced_memory()
 print(f'\n\n\n25 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
 '''
 
-######################################################
+###########################
 
 '''10 mil Empresas'''
 
 '''from dados.emp10mil import empresas
+tracemalloc.start()
 hora_ini = time()
 quick_sort_RECURSIVO(empresas)
 hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
-
 
 print(f'\n\n\n10 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
 '''
