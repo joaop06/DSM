@@ -63,7 +63,7 @@ from time import time
 
 '''100 mil Empresas'''
 
-from dados.emp100mil import empresas
+'''from dados.emp100mil import empresas
 tracemalloc.start()
 hora_ini = time()
 merge_sort_ITERATIVO(empresas)
@@ -71,7 +71,7 @@ hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
 print(f'\n\n\n100 mil Empresas:\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\n')
-
+'''
 
 ###########################
 
@@ -105,7 +105,7 @@ print(f'\n\n\n25 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Mem
 
 '''10 mil Empresas'''
 
-'''from dados.emp10mil import empresas
+from dados.emp10mil import empresas
 tracemalloc.start()
 hora_ini = time()
 merge_sort_ITERATIVO(empresas)
@@ -113,4 +113,3 @@ hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
 print(f'\n\n\n10 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\n')
-'''
