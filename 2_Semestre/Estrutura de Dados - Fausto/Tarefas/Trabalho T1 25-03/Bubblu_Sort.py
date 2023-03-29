@@ -56,7 +56,7 @@ print(f'\n\n\n50 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Mem
 
 '''25 mil Empresas'''
 
-from dados.emp25mil import empresas
+'''from dados.emp25mil import empresas
 tracemalloc.start()
 hora_ini = time()
 bubble_sort(empresas)
@@ -64,13 +64,13 @@ hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
 print(f'\n\n\n25 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
-
+'''
 
 ###########################
 
 '''10 mil Empresas'''
 
-'''from dados.emp10mil import empresas
+from dados.emp10mil import empresas
 tracemalloc.start()
 hora_ini = time()
 bubble_sort(empresas)
@@ -78,4 +78,3 @@ hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory()
 
 print(f'\n\n\n10 mil Empresas\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nComparações: {comparacoes}, Trocas: {trocas}, Passadas: {passadas}.\n')
-'''
