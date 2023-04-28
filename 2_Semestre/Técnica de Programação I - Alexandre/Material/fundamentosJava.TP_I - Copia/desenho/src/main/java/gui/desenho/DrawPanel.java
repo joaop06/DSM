@@ -28,5 +28,12 @@ public class DrawPanel extends JPanel{
         
         //desenha uma linha a partir do canto inferior esquerdo até o superior direito
         g.drawLine(0, height, width, 0);
+            
+          //desenha uma linha a partir do meio superior até o meio inferior
+          g.drawLine(width/2, 0, width/2, height);
+          
+          //desenha uma linha a partir do meio esquerdo até o meio direito
+          g.drawLine(0, height/2, width, height/2);
+        
     }
 }
