@@ -8,3 +8,5 @@ const pool = new Pool({
     port: process.env.PG_PORT,
     database: process.env.PG_DATABASE
 })
+
+module.exports = pool
