@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(0, './')
 from lib.stack import Stack
 
 #expr = "2 + (( 5 * ( 3 / 2 + 1) / 4 ))"

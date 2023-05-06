@@ -1,4 +1,6 @@
-from doubly_linked_list import DoublyLinkedList
+import sys
+sys.path.insert(0, './')
+from lib.doubly_linked_list import DoublyLinkedList
 
 lista = DoublyLinkedList()
 print(lista)

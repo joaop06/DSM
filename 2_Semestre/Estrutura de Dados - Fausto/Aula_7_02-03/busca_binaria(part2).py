@@ -28,6 +28,8 @@ def busca_binaria(lista, val):
     return -1
 
 
+import sys
+sys.path.insert(0, './')
 from data.lista_nomes import nomes
 from time import time
 

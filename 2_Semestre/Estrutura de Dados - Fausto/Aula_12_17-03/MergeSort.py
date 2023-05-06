@@ -100,8 +100,8 @@ import tracemalloc
 sys.dont_write_bytecode = True # Impede a creação do cache
 
 
-sys.path.append('./Material/Aulas_Algoritmos_Ordenacao/data')
-'''from nomes_desord import nomes
+sys.path.insert(0, './')
+from data.nomes_desord import nomes
 
 # Pega apenas os 25k primeiros nomes
 # nomes = nomes[:25000]
@@ -118,4 +118,4 @@ hora_fim = time()
 mem_atual, mem_pico = tracemalloc.get_traced_memory() # Captura as informações de gasto de memória
 
 
-print(f'\n\n\nLista Nomes Ordenada: {resultado}\n\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nDivisões: {divs}  /  Junções: {juncs}  /  Comparações: {comps}.\n\n')'''
+print(f'\n\n\nLista Nomes Ordenada: {resultado}\n\n\nTempo Gasto: {hora_fim - hora_ini}\nPico de Memória: {mem_pico / 1024 / 1024} MB\nDivisões: {divs}  /  Junções: {juncs}  /  Comparações: {comps}.\n\n')

@@ -37,17 +37,17 @@ print(f'Posição do valor 33 na lista: {resultado}\n')
 
 import sys
 sys.dont_write_bytecode = True      # Impeede a criação do cache
-
 from time import time
-import sys
+sys.path.insert(0, './')
+from data.nomes_desord import nomes
 
-sys.path.append('./Material/Aulas_Algoritmos_Ordenacao/data')
-from nomes_desord import nomes
+
 def teste_busca_nome(nome):
     hora_ini = time()
     resultado = busca_seq(nomes, nome)
     hora_fim = time()
     return f'Busca pelo nome {nome}\nPosição do nome {nome} na lista: {resultado}\n\nTempo gasto: {(hora_fim - hora_ini) * 1000} ms\n'
+
 
 nome = teste_busca_nome('JOAO')
 print('-'*50)

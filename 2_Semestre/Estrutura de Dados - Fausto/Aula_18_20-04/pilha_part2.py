@@ -8,6 +8,8 @@
     IMPLEMENTAÇÃO USANDO A CLASSE Stack
 """
 
+import sys
+sys.path.insert(0, './')
 from lib.stack import Stack
 
 palavra = input("Informe a palavra a ser verificada:")

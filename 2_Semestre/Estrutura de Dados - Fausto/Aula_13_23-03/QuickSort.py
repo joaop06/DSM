@@ -75,8 +75,8 @@ from time import time
 import sys
 import tracemalloc
 sys.dont_write_bytecode = True # Impede a creação do cache
-sys.path.append('./Material/Aulas_Algoritmos_Ordenacao/data')
-from nomes_desord import nomes
+sys.path.insert(0, './')
+from data.nomes_desord import nomes
 
 
 # Pega apenas os 25k primeiros nomes

@@ -29,13 +29,13 @@ def busca_binaria(lista, val):
 
 
 import sys
-sys.path.append('./Material/Aulas_Algoritmos_Ordenacao/data')
-from nomes_desord import nomes
+sys.path.insert(0, './')
+from data.nomes_desord import nomes
 from time import time
 
-num = str(input('Nome para buscar: ')).upper()
+nome = str(input('Nome para buscar: ')).upper()
 hora_ini = time()
-buscando = busca_binaria(nomes, num)
+buscando = busca_binaria(nomes, nome)
 hora_fim = time()
 
 if buscando == -1:
