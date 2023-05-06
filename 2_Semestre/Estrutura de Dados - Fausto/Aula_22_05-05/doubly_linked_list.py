@@ -100,45 +100,44 @@ class DoublyLinkedList:
         # Incrementa a quantidade de nodos da lista
         self.__count += 1
 
-    """ Método de atalho para inserção no início da lista """
+
+    ''' Método de atalho para inserção no início da lista '''
     def insert_front(self, val):
         self.insert(0, val)
 
-    """ Método de atalho para inserção no final da lista """
+
+    ''' Método de atalho para inserção no final da lista '''
     def insert_back(self, val):
         self.insert(self.get_count(), val)
 
-    """ Método que remove o nodo da posição especificada """
+
+    ''' Método que remove o nodo da posição especificada '''
     def remove(self, pos):
 
         # 1º caso: lista vazia ou posição fora dos limites
-        if self.get_count() == 0 or pos < 0 or pos > self.get_count() - 1:
+        if self.get_count() == 0 or pos < 0 or pos > self.get_count() -1:
             raise Exception("ERRO: posição inválida para remoção.")
         
-        # 2º caso: remoção do início da lista
+        # 2º caso: remoção do iníicio da lista
         if pos == 0:
             # Será removido o primeiro nodo da lista
             removed = self.__head
             # O novo __head passa a ser o sucessor do nodo removido
             self.__head = removed.next
-            # Se o novo __head for um nodo válido, ele não pode ter um
-            # antecessor
+            # Se o novo __head for um nodo válido, ele não pode ter um antecessor
             if self.__head is not None: self.__head.prev = None
-            # Em caso de remoção do único nodo restante da lista, __tail
-            # precisa passar a valer None também
+            # Em caso de remoção do único nodo restante da lista, __tail precesa passar a valer None também
             if self.get_count() == 1: self.__tail = None
-
+        
         # 3º caso: remoção do final da lista
-        elif pos == self.get_count() - 1:
+        elif pos == self.get_count() -1:
             # Será removido o último nodo da lista
             removed = self.__tail
             # O novo __tail passa a ser o antecessor do nodo removido
             self.__tail = removed.prev
-            # Se o novo __tail for um nodo válido, ele não pode ter um
-            # sucessor
+            # Se o novo __tail for um nodo válido, ele não pode ter um sucessor
             if self.__tail is not None: self.__tail.next = None
-            # Em caso de remoção do único nodo restante da lista, __head
-            # precisa passar a valer None também
+            # Em caso de remoção do único nodo restante da lista, __head precisa passar a valer None também
             if self.get_count() == 1: self.__head = None
 
         # Decrementa a quantidade de itens da lista
@@ -147,14 +146,12 @@ class DoublyLinkedList:
         # Retorna a informação do usuário armazenada no nodo removido
         return removed.data
 
-    """
-        Método que exibe uma representação da lista como string
-    """
+
+    ''' Método que exibe uma representação da lista como String '''
     def __str__(self):
         if self.get_count() == 0: return "*** [ LISTA VAZIA ] ***\n\n"
         else:
-            repr = f"LISTING {self.get_count()} ITEM(S)\n"
-            repr += ('=' * 50) + "\n"
+            repr = "LISTING {}"
             node = self.__head
             for pos in range(self.get_count()):
                 repr += f"NODE #{pos}, address: {hex(id(node))}\n"
