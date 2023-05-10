@@ -7,7 +7,7 @@ SELECT * FROM Especies;
 /*Selecione o nome e a espécie de todos os animais*/
 SELECT * FROM
 	Animais JOIN Especies on
-    Animais.especie_id = Especies.id ORDER BY especies.alimentacao DESC;
+    Animais.especie_id = Especies.id;
 
 
 /*Selecione todos os gatos laranja*/
@@ -47,9 +47,11 @@ Animais.especie_id = especies.id WHERE especies.alimentacao = 'onívoro' AND YEA
 	
 	
 /*Selecione todos os mamiferos que pesam mais que 10 quilos e são marrons ou azul*/
+SELECT Animais.nome AS Nome, Especies.nome AS Espécie FROM
+	Animais JOIN Espécies ON
+    Animais.especie_id = Especies.id WHERE Animais.peso > 10 AND Animais.cor = 'marrom' OR Animais
 
-	
-	
+
 /*(Desafio) Selecione a quantidade total de animais*/
 	
 	
