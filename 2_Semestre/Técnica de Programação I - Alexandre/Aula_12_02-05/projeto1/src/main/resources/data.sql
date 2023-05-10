@@ -1,0 +1,5 @@
+INSERT INTO Contato (name, email) VALUES ("João Pedro", "joao@teste.com")
+INSERT INTO Contato (name, email) VALUES ("Pedro", "pppp@teste.com")
+INSERT INTO Contato (name, email) VALUES ("João", "jjjj@teste.com")
+INSERT INTO Contato (name, email) VALUES ("Bob", "cachorro@teste.com")
+INSERT INTO Contato (name, email) VALUES ("Não sei", "cansado@teste.com")
