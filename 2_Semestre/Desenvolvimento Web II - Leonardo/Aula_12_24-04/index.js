@@ -5,8 +5,8 @@ const pool = require("./data/data")
 app.use(express.json());
 
 // Inicialização do servidor local
-app.listen(8080, () => {
-    console.log("Servidor local ativo! Porta: 8080")
+app.listen(8181, () => {
+    console.log("Servidor local ativo! Porta: 8181")
 })
 
 app.get("/users", async (req, res) => {

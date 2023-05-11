@@ -1,5 +1,6 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
+const pool = require("./data/data")
 
 const app = express();
 
@@ -16,7 +17,7 @@ function verifyToken(req, res, next) {
   const token = req.headers.authorization;
 
   if (!token) {
-    res.status(401).json({
+    return res.status(401).json({
       message: "Token não fornecido!",
     });
   }
@@ -32,16 +33,35 @@ function verifyToken(req, res, next) {
   }
 }
 
+
+
+
+const usuarios = [
+  {
+    id: 1,
+    name: "joao",
+    password: "123"
+  },
+  {
+    id: 2,
+    name: "maria",
+    password: "123"
+  }
+]
+
+
+
+/*  app.get("/") -> "Home Page"  */
 app.get("/", (req, res) => {
   res.send("Home Page");
 });
 
+
+/*  app.post("/login") -> Chamada login  */
 app.post("/login", (req, res) => {
   const { name, password } = req.body;
 
-  const usuario = usuarios.find(
-    (usuario) => usuario.name === name && usuario.password === password
-  );
+  const usuario = usuarios.find(usuario => usuario.name === name && usuario.password === password)
 
   if (!usuario) {
     return res.status(401).json({
@@ -55,63 +75,97 @@ app.post("/login", (req, res) => {
   });
 });
 
-app.get("/users", verifyToken, (req, res) => {
-  res.status(200).json({
-    usuarios,
-  });
-});
 
-app.post("/users", (req, res) => {
-  const { name, password } = req.body;
-  const id = usuarios.length + 1;
-  const usuario = {
-    id,
-    name,
-    password,
-  };
-  usuarios.push(usuario);
 
-  res.status(201).json({
-    message: "Usuário criado com sucesso!",
-    usuario,
-  });
-});
+/*  app.get("/users") -> Mostrar todos os usuários  */
+app.get("/users", verifyToken, async (req, res) => {
 
-app.put("/users/:id", (req, res) => {
-  const { id } = req.params;
-  const { name, password } = req.body;
+  try{
+    const client = await pool.connect()
+    const {rows} = await client.query("SELECT * FROM users ORDER BY name")
+    res.status(200).send(rows)
 
-  const usuario = usuarios.find((usuario) => usuario.id == id);
-
-  if (!usuario) {
-    return res.status(404).json({
-      message: "Usuário não encontrado!",
-    });
+  } catch(error){
+    res.status(500).send("Erro de conexão com o banco de dados")
   }
-
-  usuario.name = name || usuario.name;
-  usuario.password = password || usuario.password;
-
-  res.status(200).json({
-    message: "Usuário atualizado com sucesso!",
-    usuario,
-  });
 });
 
-app.delete("/users/:id", (req, res) => {
-  const { id } = req.params;
 
-  const index = usuarios.findIndex((usuario) => usuario.id == id);
+/*  app.get("/users") -> Mostrar o usuário buscado pelo nome  */
+app.get("/users/:name", verifyToken, async (req, res) => {
 
-  if (index === -1) {
-    return res.status(404).json({
-      message: "Usuário não encontrado!",
-    });
+  try{
+    const {name} = req.params;
+    const client = await pool.connect()
+    const {rows} = await client.query(`SELECT * FROM users WHERE name LIKE '%${name}%'`)
+    res.status(200).send(rows)
+
+  } catch(error){
+    res.status(500).send("Erro de conexão com o banco de dados")
   }
+});
 
-  usuarios.splice(index, 1);
 
-  res.status(200).json({
-    message: "Usuário deletado com sucesso!",
-  });
+/*  app.post("/users") -> Criar um usuário  */
+app.post("/users", async (req, res) => {
+
+  try{
+    const { name, password } = req.body;
+    const client = await pool.connect()
+    const user = await client.query(`INSERT INTO users (name, password) VALUES ('${name}', '${password}')`)
+
+    res.status(201).send(`Olá, ${name}! Seu cadastro foi realizado com sucesso!`)
+
+  } catch (error){
+    res.status(500).send("Erro ao criar o usuário")
+  }
+});
+
+
+/*  app.put("/users/:id") -> Atualizar um usuário  */
+app.put("/users/:id", async (req, res) => {
+
+  try{ 
+    const {id} = req.params;
+    const {name, password} = req.body;
+    const client = await pool.connect()
+    const user = await client.query(`UPDATE users SET name = '${name}', password = '${password}' WHERE id = ${id}`)
+
+    res.status(200).send("Cadastro alterado com sucesso!")
+
+  } catch (error){
+    console.log(error)
+    res.status(500).send("Erro ao atualizar o usuário")
+  }
+});
+
+
+/*  app.delete("/users/:id") -> deletar um usuário  */
+app.delete("/users/:id", async (req, res) => {
+  
+  try{
+    const {id} = req.params;
+    const client = await pool.connect();
+    const user = await client.query(`DELETE FROM users WHERE id = ${id}`)
+
+    res.status(200).send("Usuário deletado com sucesso!")
+
+  } catch(error){
+    res.status(500).send("Erro ao deletar o usuário")
+  }
+});
+
+
+/*  app.delete("/usersAllUsers/") -> deletar um usuário  */
+app.delete("/usersAllUsers", async (req, res) => {
+  
+  try{
+    const client = await pool.connect();
+    const user = await client.query("DELETE FROM users")
+
+    res.status(200).send("Todos os usuários foram deletados")
+
+  } catch(error){
+    res.status(500).send("Erro ao deletar os usuários")
+  }
 });
