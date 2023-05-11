@@ -10,13 +10,7 @@ app.listen(8080, () => {
 });
 
 const segredo = "MeuSegredo";
-const usuarios = [
-    {
-        id: 1,
-        name: "jao",
-        password: "123"
-    }
-];
+
 
 function verifyToken(req, res, next) {
   const token = req.headers.authorization;
