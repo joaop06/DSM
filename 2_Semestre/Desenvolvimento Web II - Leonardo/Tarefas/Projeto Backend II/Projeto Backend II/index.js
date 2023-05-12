@@ -1,7 +1,6 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const pool = require("./data/data")
-
 const app = express();
 
 app.use(express.json());
@@ -45,8 +44,13 @@ app.post("/login", async (req, res) => {
 
   try {
     const { name, password } = req.body;
-    const client = await pool.connect();
-    const user = await client.query(`SELECT * FROM users WHERE name = '${name}' AND password = '${password}'`)
+    const client = await pool.connect()
+    const { rows } = await client.query("SELECT * FROM users WHERE name = $1 AND password = $2", [name, password])
+    const user = {
+      id: rows.id,
+      name: rows.name,
+      password: rows.password,
+    }
 
     if (!user) {
       return res.status(401).send("Nome de usuário ou senha incorretos!")
@@ -65,7 +69,6 @@ app.post("/login", async (req, res) => {
 });
 
 
-
 /*  app.get("/users") -> Mostrar todos os usuários  */
 app.get("/users", async (req, res) => {
 
@@ -81,7 +84,7 @@ app.get("/users", async (req, res) => {
 
 
 /*  app.post("/users") -> Criar um usuário  */
-app.post("/users", async (req, res) => {
+app.post("/users", verifyToken, async (req, res) => {
 
   try {
     const { name, password } = req.body;
