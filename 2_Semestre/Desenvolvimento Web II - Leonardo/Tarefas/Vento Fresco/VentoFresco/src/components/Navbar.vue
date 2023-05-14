@@ -1,15 +1,66 @@
 <template>
-    <v-app-bar>
-        <v-row>
-            <v-col>
-                <v-card>
-                    <p>Navbar</p>
-                </v-card>
+    <v-app-bar color="indigo-darken-4 pa-2" :elevation="5">
+
+        <v-row no-gutters justify="center" align="center">
+            <v-col cols="3">
+                <router-link to="/" tag="div" class="ml-8 text-decoration-none" color="white">
+                    <v-title class="text-button text-white">
+                        <v-icon>mdi-fan</v-icon>
+                        Vento Forte
+                    </v-title>
+                </router-link>
+            </v-col>
+
+            <v-col cols="5" class="mt-auto">
+                <v-text-field append-inner-icon="mdi-magnify"></v-text-field>
+
+            </v-col>
+
+            <v-col cols="3">
+                <v-col v-if="true" class="d-flex text-right justify-end">
+
+                    <v-btn to="/" width="5vw" class="ma-5 bg-white" color="indigo-accent-4" rounded="shaped" :elevation="2"
+                        icon>
+                        <v-icon size="large">mdi-cart</v-icon>
+                    </v-btn>
+
+                    <v-btn to="/" width="5vw" class="ma-5 bg-white" color="indigo-accent-4" rounded="shaped" :elevation="2"
+                        icon>
+                        <v-icon size="large">mdi-account-box</v-icon>
+                    </v-btn>
+
+
+                </v-col>
+
+                <v-col v-else class="text-right">
+                    <v-btn width="7vw" height="5vh" class="ma-5 bg-white font-weight-bold" color="indigo-accent-4"
+                        rounded="shaped" :elevation="1" to="/login">
+                        Entrar
+                    </v-btn>
+
+                    <v-btn width="7vw" height="5vh" class="ma-5 bg-white font-weight-bold" color="indigo-accent-4"
+                        rounded="shaped" :elevation="1" to="/cadastro">
+                        Cadastrar
+                    </v-btn>
+
+                </v-col>
             </v-col>
         </v-row>
+
     </v-app-bar>
 </template>
-
+  
 <script>
 
+export default {
+    data() {
+        return {
+
+        }
+    },
+    methods: {
+
+    }
+}
 </script>
+  
