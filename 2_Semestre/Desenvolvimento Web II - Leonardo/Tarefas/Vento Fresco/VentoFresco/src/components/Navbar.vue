@@ -17,7 +17,7 @@
             </v-col>
 
             <v-col cols="3">
-                <v-col v-if="true" class="d-flex text-right justify-end">
+                <v-col v-if="false" class="d-flex text-right justify-end">
 
                     <v-btn to="/" width="5vw" class="ma-5 bg-white" color="indigo-accent-4" rounded="shaped" :elevation="2"
                         icon>
@@ -29,20 +29,13 @@
                         <v-icon size="large">mdi-account-box</v-icon>
                     </v-btn>
 
-
                 </v-col>
 
                 <v-col v-else class="text-right">
-                    <v-btn width="7vw" height="5vh" class="ma-5 bg-white font-weight-bold" color="indigo-accent-4"
-                        rounded="shaped" :elevation="1" to="/login">
-                        Entrar
+                    <v-btn to="/login_cadastro " width="14vw" height="5vh" class="ma-5 bg-white font-weight-bold"
+                        color="indigo-accent-4" rounded="shaped" :elevation="1" prepend-icon="mdi-login">
+                        Entrar / Cadastrar
                     </v-btn>
-
-                    <v-btn width="7vw" height="5vh" class="ma-5 bg-white font-weight-bold" color="indigo-accent-4"
-                        rounded="shaped" :elevation="1" to="/cadastro">
-                        Cadastrar
-                    </v-btn>
-
                 </v-col>
             </v-col>
         </v-row>

@@ -8,6 +8,12 @@ const routes = [
     component: () => import('@/views/Home.vue'),
 
   },
+  {
+    path: '/login_cadastro',
+    name: 'Login_Cadastro',
+    component: () => import('@/views/Login_Cadastro.vue'),
+
+  },
 ]
 
 const router = createRouter({
