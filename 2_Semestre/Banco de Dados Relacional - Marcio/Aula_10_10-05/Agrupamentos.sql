@@ -28,6 +28,8 @@ SELECT MAX(peso) FROM Animais;
 SELECT MAX(peso) AS Maior_Peso FROM Animais;
 
 
-SELECT * FROM Animais LIMIT 5;
+SELECT nome FROM Animais LIMIT 5;
 
-SELECT * FROM 
+SELECT nome FROM Animais LIMIT ROUND(SELECT COUNT(*) FROM Animais) * 0.5;
+
+

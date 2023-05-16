@@ -2,8 +2,8 @@
     <v-app-bar color="indigo-darken-4 pa-2" :elevation="5">
 
         <v-row no-gutters justify="center" align="center">
-            <v-col cols="3">
-                <router-link to="/" tag="div" class="ml-8 text-decoration-none" color="white">
+            <v-col cols="4">
+                <router-link to="/" tag="div" class="ml-5 text-decoration-none" color="white">
                     <v-title class="text-button text-white">
                         <v-icon>mdi-fan</v-icon>
                         Vento Forte
@@ -11,12 +11,12 @@
                 </router-link>
             </v-col>
 
-            <v-col cols="5" class="mt-auto">
+            <v-col cols="4" class="mt-auto">
                 <v-text-field append-inner-icon="mdi-magnify"></v-text-field>
 
             </v-col>
 
-            <v-col cols="3">
+            <v-col cols="4">
                 <v-col v-if="false" class="d-flex text-right justify-end">
 
                     <v-btn to="/" width="5vw" class="ma-5 bg-white" color="indigo-accent-4" rounded="shaped" :elevation="2"
@@ -32,7 +32,7 @@
                 </v-col>
 
                 <v-col v-else class="text-right">
-                    <v-btn to="/login_cadastro " width="14vw" height="5vh" class="ma-5 bg-white font-weight-bold"
+                    <v-btn to="/login_cadastro" width="14vw" height="5vh" class="ma-5 bg-white font-weight-bold"
                         color="indigo-accent-4" rounded="shaped" :elevation="1" prepend-icon="mdi-login">
                         Entrar / Cadastrar
                     </v-btn>

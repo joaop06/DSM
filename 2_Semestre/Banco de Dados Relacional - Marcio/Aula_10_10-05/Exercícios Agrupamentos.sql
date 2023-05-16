@@ -13,9 +13,11 @@ produtos.marca_id = marcas.marca_id GROUP BY produtos.marca_id;
 
 
 /*Selecione o preço médio dos produtos de cada marca.*/
+SELECT nome_marca AS Marca, AVG(preco) FROM
+produtos JOIN marcas ON
+produtos.marca_id = marcas.marca_id GROUP BY produtos.marca_id;
 
-	
-	
+
 Selecione a média dos preços e total em estoque dos produtos agrupados por marca.
 	
 	

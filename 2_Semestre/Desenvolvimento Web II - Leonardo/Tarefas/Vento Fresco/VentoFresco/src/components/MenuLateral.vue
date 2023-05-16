@@ -1,5 +1,5 @@
 <template>
-    <v-card class="bg-indigo-darken-4" justify="start" width="10vw" height="100%">
+    <v-card class="bg-indigo-darken-4" justify="start" width="12%" height="100%">
 
         <v-expansion-panels class="mt-5 pa-2" :elevation="0">
             <v-expansion-panel class="bg-indigo-darken-4" :elevation="0">
