@@ -3,7 +3,7 @@
     <v-main>
       <Navbar />
       <v-card class="d-flex" width="100%" height="100%">
-        <MenuLateral v-if="!$route.path.includes('login_cadastro')" />
+        <MenuLateral v-if="!$route.path.includes('login_cadastro') && !$route.path.includes('produto')" />
         <router-view />
       </v-card>
 

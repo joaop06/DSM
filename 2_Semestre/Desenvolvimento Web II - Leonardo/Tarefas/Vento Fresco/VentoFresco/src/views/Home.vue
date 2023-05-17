@@ -2,7 +2,7 @@
     <v-col class="ma-auto mt-12" cols="8" rounded="xl">
         <v-row>
             <v-col v-for="(produto, index) in produtos" class="d-flex justify-start" border-hover :key="index">
-                <router-link :to="{ name: 'Produto', params: { parametro: `${produto.id}` } }">
+                <router-link :to="{ name: 'Produto', params: { parametro: `${produto.id}` } }" class="text-decoration-none">
                     <v-card class="d-flex flex-column" width="300px" height="400px" :elevation="2">
                         <v-img :src="produto.imagem" :lazy-src="produto.imagem" width="300px" height="200px" cover></v-img>
 
@@ -12,7 +12,8 @@
 
                         <v-card-text class="my-n4">
                             <v-card class="font-weight-black justify-start mt-5 ml-3" :elevation="0">
-                                <span class="text-h6 text-indigo-accent-4">{{ produto.preco }}</span>
+                                <p class="text-decoration-line-through">De R$ {{ (parseInt(produto.preco) + (parseInt(produto.preco)/100)*10).toString().replace('.', ',') }}</p>
+                                <p class="text-h6 text-indigo-accent-4">Por R$ {{ (produto.preco).replace('.', ',') }}</p>
                             </v-card>
                         </v-card-text>
                     </v-card>
