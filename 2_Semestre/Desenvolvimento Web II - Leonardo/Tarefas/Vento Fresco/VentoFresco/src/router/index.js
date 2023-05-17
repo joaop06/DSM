@@ -14,6 +14,12 @@ const routes = [
     component: () => import('@/views/Login_Cadastro.vue'),
 
   },
+  {
+    path: '/produto/:parametro',
+    name: 'Produto',
+    component: () => import('@/views/Produto.vue'),
+
+  }
 ]
 
 const router = createRouter({

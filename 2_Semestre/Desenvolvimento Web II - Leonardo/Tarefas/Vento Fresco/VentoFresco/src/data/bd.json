@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "nome": "Ventilador 111111111",
+        "preco": "R$ 11111,00",
+        "imagem": "https://imgs.casasbahia.com.br/55011466/1xg.jpg?imwidth=292"
+    },
+    {
+        "id": 2,
+        "nome": "Ventilador 222222222",
+        "preco": "R$ 2222,00",
+        "imagem": "https://imgs.casasbahia.com.br/55011466/1xg.jpg?imwidth=292"
+    },
+    {
+        "id": 3,
+        "nome": "Ventilador 333333333",
+        "preco": "R$ 33333,00",
+        "imagem": "https://imgs.casasbahia.com.br/55011466/1xg.jpg?imwidth=292"
+    }
+]

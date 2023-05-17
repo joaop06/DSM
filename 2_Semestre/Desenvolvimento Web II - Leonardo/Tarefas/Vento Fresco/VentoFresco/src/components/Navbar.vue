@@ -12,7 +12,7 @@
             </v-col>
 
             <v-col cols="4" class="mt-auto">
-                <v-text-field append-inner-icon="mdi-magnify"></v-text-field>
+                <v-text-field class="bg-rgb(255,255,255)" append-inner-icon="mdi-magnify" rounded="lg"></v-text-field>
 
             </v-col>
 
