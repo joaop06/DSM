@@ -7,7 +7,7 @@
                         <v-img :src="produto.imagem" :lazy-src="produto.imagem" width="300px" height="200px" cover></v-img>
 
                         <v-card-title>
-                            <span class="text-subtitle-2 text-black text-bold text-wrap">{{ produto.nome }}</span>
+                            <span class="text-subtitle-1 text-black text-bold text-wrap">{{ produto.nome }}</span>
                         </v-card-title>
 
                         <v-card-text class="my-n4">

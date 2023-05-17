@@ -15,23 +15,30 @@
                         <p class="text-h6">{{ produto.nome }}</p>
                         <p>Cód. Produto: {{ produto.id }}</p>
                     </v-card>
-
                     <p class="mt-12 text-h5 text-indigo-accent-4">{{ (produto.preco).replace('.', ',') }}</p>
                     <p>ou até 3x de {{ parseInt(produto.preco) / 3 }} sem juros <span
-                            class="text-indigo-accent-4 text--underline" @click="parcelamento">ver
+                            class="text-indigo-accent-4 text-decoration-underline" @click="parcelamento">ver
                             parcelamento</span> </p>
                 </v-col>
             </v-row>
         </v-sheet>
     </v-container>
+
+
+
+    <Parcelamento ref="Parcelamento" />
 </template>
 
 
 <script>
 import bd from '@/data/bd.json'
+import Parcelamento from '@/components/Parcelamento.vue'
 
 
 export default {
+    components: {
+        Parcelamento
+    },
     computed: {
         parametro() {
             return this.$route.params.parametro;
@@ -45,13 +52,9 @@ export default {
     },
     methods: {
         parcelamento() {
-            this.$router.push({
-                name: 'Parcelamento',
-                params: {
-                    produto: this.produto
-                }
-            })
-        }
+            this.$refs.Parcelamento.dialog = true;
+            this.$refs.Parcelamento.preco_produto = this.produto.preco;
+        },
 
     }
 };
