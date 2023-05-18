@@ -2,7 +2,9 @@
     <v-col class="ma-auto mt-12" cols="8" rounded="xl">
         <v-row>
             <v-col v-for="(produto, index) in produtos" class="d-flex justify-start" border-hover :key="index">
-                <router-link :to="{ name: 'Produto', params: { parametro: `${produto.id}` } }" class="text-decoration-none">
+                <router-link
+                    :to="{ name: 'Produto', params: { parametro: `${produto.id}` } }"
+                    class="text-decoration-none">
                     <v-card class="d-flex flex-column" width="300px" height="400px" :elevation="2">
                         <v-img :src="produto.imagem" :lazy-src="produto.imagem" width="300px" height="200px" cover></v-img>
 
@@ -24,6 +26,7 @@
     </v-col>
 </template>
 
+
 <script>
 import bd from '@/data/bd.json'
 
@@ -35,8 +38,34 @@ export default ({
         return {
             rota: '/produtinho',
             valor: 'ventilador',
-            produtos: bd
+            produtos: bd,
+
         }
+    },
+    methods: {
+        retira_acentos(str) {
+
+            var com_acento = "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝŔÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿŕ ";
+            var sem_acento = "AAAAAAACEEEEIIIIDNOOOOOOUUUUYRsBaaaaaaaceeeeiiiionoooooouuuuybyr+";
+            var novastr = "";
+            for (let i = 0; i < str.length; i++) {
+                var troca = false;
+                for (let a = 0; a < com_acento.length; a++) {
+                    if (str.substr(i, 1) == com_acento.substr(a, 1)) {
+                        novastr += sem_acento.substr(a, 1);
+                        troca = true;
+                        break;
+                    }
+                }
+                if (troca == false) {
+                    novastr += str.substr(i, 1);
+                }
+            }
+            novastr = novastr.toLowerCase()
+            console.log(novastr)
+            return novastr;
+        }
+
     }
 })
 
