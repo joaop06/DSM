@@ -6,19 +6,22 @@
         <MenuLateral v-if="!$route.path.includes('login_cadastro') && !$route.path.includes('produto')" />
         <router-view />
       </v-card>
-
+      <Footer />
     </v-main>
   </v-app>
 </template>
 
+
 <script>
 import Navbar from '@/components/Navbar.vue'
 import MenuLateral from '@/components/MenuLateral.vue'
+import Footer from '@/components/Footer.vue'
 
 export default ({
   components: {
     Navbar,
-    MenuLateral
+    MenuLateral,
+    Footer
   },
   data() {
     return {
