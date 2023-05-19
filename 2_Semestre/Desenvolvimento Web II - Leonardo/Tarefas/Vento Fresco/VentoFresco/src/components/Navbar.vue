@@ -17,9 +17,9 @@
             </v-col>
 
             <v-col cols="4">
-                <v-col v-if="false" class="d-flex text-right justify-end">
+                <v-col v-if="true" class="d-flex text-right justify-end">
 
-                    <v-btn to="/" width="5vw" class="ma-5 bg-white" color="indigo-accent-4" rounded="shaped" :elevation="2"
+                    <v-btn @click="carrinho" width="5vw" class="ma-5 bg-white" color="indigo-accent-4" rounded="shaped" :elevation="2"
                         icon>
                         <v-icon size="large">mdi-cart</v-icon>
                     </v-btn>
@@ -41,19 +41,30 @@
         </v-row>
 
     </v-app-bar>
+
+
+
+    <Carrinho ref="Carrinho" />
 </template>
   
 <script>
+import Carrinho from "@/components/Carrinho.vue"
 
-export default {
+export default ({
+    components:{
+        Carrinho,
+        
+    },
     data() {
         return {
 
         }
     },
     methods: {
-
+        carrinho(){
+            this.$refs.Carrinho.open = true;
+        }
     }
-}
+})
 </script>
   
