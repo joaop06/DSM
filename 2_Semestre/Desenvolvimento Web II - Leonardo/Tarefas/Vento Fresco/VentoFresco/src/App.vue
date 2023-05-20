@@ -32,13 +32,16 @@ export default ({
     // Importa o objeto $route do Vue Router
     const { $route } = this
     console.log($route.path) // Verifica o caminho da rota atual
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   }
 })
 </script>
 
 
 <style>
-body{
+body {
   background-color: #BBDEFB;
 }
 </style>

@@ -14,9 +14,8 @@
 
                         <v-card-text class="my-n4">
                             <v-card class="font-weight-black justify-start mt-5 ml-3" :elevation="0">
-                                <p class="text-decoration-line-through">De R$ {{ (parseInt(produto.preco) +
-                                    (parseInt(produto.preco) / 100) * 10).toString().replace('.', ',') }}</p>
-                                <p class="text-h6 text-indigo-accent-4">Por R$ {{ (produto.preco).replace('.', ',') }}</p>
+                                <p class="text-decoration-line-through">De {{ (produto.preco).toLocaleString("pt-BR", {style: "currency", currency: "BRL"}) }}</p>
+                                <p class="text-h6 text-indigo-accent-4">Por {{ (produto.preco - (produto.preco / 10)).toLocaleString("pt-BR", {style: "currency", currency: "BRL"}) }}</p>
                             </v-card>
                         </v-card-text>
                     </v-card>
@@ -24,6 +23,9 @@
             </v-col>
         </v-row>
     </v-col>
+
+
+
 </template>
 
 
@@ -32,13 +34,13 @@ import bd from '@/data/bd.json'
 
 export default ({
     components: {
-
+        
     },
     data() {
         return {
-            rota: '/produtinho',
-            valor: 'ventilador',
             produtos: bd,
+
+            resultPesquisa: []
 
         }
     },

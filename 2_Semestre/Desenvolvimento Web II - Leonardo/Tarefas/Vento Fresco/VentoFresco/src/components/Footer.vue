@@ -13,13 +13,13 @@
       </div>
   
       <div class="pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc.
+        Buscando sempre atingir o público que valoriza o design e a estética do produto.
       </div>
   
       <v-divider></v-divider>
   
       <div>
-        {{ new Date().getFullYear() }} — <strong>Vento Fresco</strong>
+        {{ new Date().getFullYear() }} — <strong>Vento Fresco®</strong>
       </div>
     </v-footer>
   </template>
