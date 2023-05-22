@@ -19,7 +19,7 @@
             <v-col cols="4">
                 <v-col v-if="true" class="d-flex text-right justify-end">
 
-                    <v-btn @click="carrinho" width="5vw" class="ma-5 bg-white" color="indigo-accent-4" rounded="shaped" :elevation="2"
+                    <v-btn to="/carrinho" width="5vw" class="ma-5 bg-white" color="indigo-accent-4" rounded="shaped" :elevation="2"
                         icon>
                         <v-icon size="large">mdi-cart</v-icon>
                     </v-btn>

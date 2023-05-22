@@ -24,6 +24,11 @@ const routes = [
     path: '/perfil',
     name: 'Perfil',
     component: () => import('@/views/Perfil.vue')
+  },
+  {
+    path: '/carrinho',
+    name: 'Carrinho',
+    component: () => import('@/views/Carrinho.vue')
   }
 ]
 

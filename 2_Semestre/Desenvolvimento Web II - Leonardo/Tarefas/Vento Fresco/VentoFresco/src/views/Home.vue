@@ -14,8 +14,8 @@
 
                         <v-card-text class="my-n4">
                             <v-card class="font-weight-black justify-start mt-5 ml-3" :elevation="0">
-                                <p class="text-decoration-line-through">De {{ (produto.preco).toLocaleString("pt-BR", {style: "currency", currency: "BRL"}) }}</p>
-                                <p class="text-h6 text-indigo-accent-4">Por {{ (produto.preco - (produto.preco / 10)).toLocaleString("pt-BR", {style: "currency", currency: "BRL"}) }}</p>
+                                <p class="text-decoration-line-through">De {{ (produto.preco + (produto.preco / 10)).toLocaleString("pt-BR", {style: "currency", currency: "BRL"}) }}</p>
+                                <p class="text-h6 text-indigo-accent-4">Por {{ (produto.preco).toLocaleString("pt-BR", {style: "currency", currency: "BRL"}) }}</p>
                             </v-card>
                         </v-card-text>
                     </v-card>

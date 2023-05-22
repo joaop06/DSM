@@ -15,13 +15,16 @@
                         <p class="text-h5">{{ produto.nome }}</p>
                         <p>Cód. Produto: {{ produto.id }}</p>
                     </v-card>
-                    <p class="mt-12 text-h5 text-indigo-accent-4">{{ (produto.preco).toLocaleString("pt-BR", {style: "currency", currency: "BRL"}) }}</p>
-                    <p>ou até 12x de {{ (produto.preco / 12).toLocaleString("pt-BR", {style:"currency", currency: "BRL"}) }} sem juros <span @click="parcelamento"
-                            class="text-indigo-accent-4 text-decoration-underline">ver
-                            parcelamento</span>
+                    <p class="mt-12 text-h5 text-indigo-accent-4">
+                        {{ (produto.preco).toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) }}
+                    </p>
+                    <p>
+                        ou até 12x de
+                        {{ (produto.preco / 12).toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) }}
+                        sem juros <span @click="parcelamento" class="text-indigo-accent-4 text-decoration-underline">ver parcelamento</span>
                     </p>
 
-                    <v-btn @click="teste" class="ma-auto" width="50%" color="green"
+                    <v-btn @click="addCarrinho(produto)" class="ma-auto" width="50%" color="green"
                         prepend-icon="mdi-shopping">Comprar</v-btn>
                 </v-col>
             </v-row>
@@ -36,6 +39,15 @@
     </v-container>
 
 
+    <v-snackbar v-model="snackbar" top>
+        {{ textsnackbar }}
+
+        <template v-slot:actions>
+            <v-btn color="pink" variant="text" @click="snackbar = false">
+                Fechar
+            </v-btn>
+        </template>
+    </v-snackbar>
 
     <Parcelamento ref="Parcelamento" />
 </template>
@@ -44,6 +56,7 @@
 <script>
 import bd from '@/data/bd.json'
 import Parcelamento from '@/components/Parcelamento.vue'
+import globalVariables from '@/controller/globalVariables';
 
 
 export default {
@@ -53,13 +66,15 @@ export default {
     computed: {
         parametro() {
             return this.$route.params.parametro;
+
         }
     },
     data() {
         return {
             produto: bd.find(item => item.id == this.$route.params.parametro),
             items: ['Categoria 1', 'Categoria 2', 'Categoria 3', 'Categoria 4'],
-
+            snackbar: false,
+            textsnackbar: ''
         }
     },
     methods: {
@@ -67,8 +82,18 @@ export default {
             this.$refs.Parcelamento.dialog = true;
             this.$refs.Parcelamento.preco_produto = this.produto.preco;
         },
-        teste() {
-            console.log(parseInt(this.produto.preco) / 3)
+        addCarrinho(produto) {
+            const produtoCarrinho = {
+                id: produto.id,
+                nome: produto.nome,
+                preco: produto.preco,
+                imagem: produto.imagem
+            }
+            globalVariables.listaCarrinho.splice(0, 0, produtoCarrinho)
+            globalVariables.totalCarrinho += parseFloat(produtoCarrinho.preco)
+
+            this.textsnackbar = 'Produto adicionado ao Carrinho!'
+            this.snackbar = true
         },
 
     },
