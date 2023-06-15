@@ -1,6 +1,11 @@
 Fundamentos Java:
 	https://github.com/XandyGomes/fundamentosJava.TP_I.git
 
-
 Projeto Spring Boot Java:
 	https://github.com/XandyGomes/projetoJavaSpring-2-DSM.git
+
+diagramaClasseJavaDSM2:
+	https://github.com/XandyGomes/diagramaClasseJavaDSM2.git
+
+Projeto Gerador de Figurinha:
+	https://github.com/XandyGomes/projeto-stickers-2DSM.git

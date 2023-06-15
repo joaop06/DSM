@@ -1,5 +1,1 @@
-https://github.com/faustocintra/ed-not-2023-1
-
-Sempre excluir meu fork e fazer de novo
-Meu Fork:
-https://github.com/joaop06/aulafausto.git
+https://github.com/faustocintra/ed-not-2023-1.git

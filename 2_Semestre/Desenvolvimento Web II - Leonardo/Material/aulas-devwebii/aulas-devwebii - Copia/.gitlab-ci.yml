@@ -1,0 +1,47 @@
+image: node:latest
+
+stages:
+  - build
+  - run
+
+# Job's name
+aula01_1-job:
+  # Define stage
+  stage: build
+  # What to run on the job.
+  script:
+    - cd Aula_01
+    - npm install
+  artifacts:
+    paths:
+      - Aula_01/node_modules
+
+aula01_2-job:
+  stage: run
+  script:
+    - cd Aula_02
+    - npm test
+  artifacts:
+    paths:
+      - node_modules/
+
+# Job's name
+aula02_1-job:
+  # Define stage
+  stage: build
+  # What to run on the job.
+  script:
+    - cd Aula_02
+    - npm install
+  artifacts:
+    paths:
+      - Aula_02/node_modules
+
+aula02_2-job:
+  stage: run
+  script:
+    - cd Aula_02
+    - npm test
+  artifacts:
+    paths:
+      - node_modules/

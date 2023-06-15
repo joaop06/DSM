@@ -1,1 +1,5 @@
-https://github.com/LeonardoRaiz/aula-sala-devii.git
+Aula Sala DevII:
+	https://github.com/LeonardoRaiz/aula-sala-devii.git
+
+Aulas DevWebII:
+	https://gitlab.com/LeonardoRaiz/aulas-devwebii.git
