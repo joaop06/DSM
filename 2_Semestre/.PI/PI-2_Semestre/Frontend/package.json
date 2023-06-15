@@ -1,0 +1,44 @@
+{
+  "name": "testevuetify",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --fix --ignore-path .gitignore",
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "@mdi/font": "7.0.96",
+    "axios": "^1.4.0",
+    "core-js": "^3.8.3",
+    "pinia": "^2.0.23",
+    "roboto-fontface": "*",
+    "vue": "^3.2.47",
+    "vue-router": "^4.0.0",
+    "vuetify": "^3.0.0",
+    "webfontloader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.3",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "sass": "^1.55.0",
+    "vite": "^3.1.9",
+    "vite-plugin-vuetify": "^1.0.0-alpha.12"
+  },
+  "description": "```\r         - Cadastro de Usuário\r         - Gerador de Pedidos\r         - Histórico de Pedidos\r         - Perfil\r ```\r #### Interface Admin:\r ```\r         - Gerenciado de todos os pedidos\r         - Adição, remoção e edição de todos os produtos.\r ```",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaop06/PI-2_Semestre.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaop06/PI-2_Semestre/issues"
+  },
+  "homepage": "https://github.com/joaop06/PI-2_Semestre#readme"
+}
