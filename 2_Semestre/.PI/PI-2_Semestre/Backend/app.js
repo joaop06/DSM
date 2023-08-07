@@ -6,8 +6,8 @@ const cors = require("cors")
 app.use(express.json())
 app.use(cors())
 
-app.listen(8080, () => {
-    console.log("Server is running in port 8080")
+app.listen(8081, () => {
+    console.log("Server is running in port 8081")
 })
 
 connection.connect(function (err){

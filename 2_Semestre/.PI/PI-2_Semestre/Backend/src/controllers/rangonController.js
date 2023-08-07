@@ -19,7 +19,7 @@ module.exports = class ScoreController {
             const { nome_completo, celular, email, senha, cep, cidade, estado, endereco, numero } = req.body
 
 
-            connection.query(`INSERT INTO Clientes VALUES (null, '${nome_completo}', ${celular}, '${email}','${senha}',${cep},${cidade}, ${estado}, ${endereco}, ${numero})`, function (err) {
+            connection.query(`INSERT INTO Clientes VALUES (null, '${nome_completo}', ${celular}, '${email}','${senha}',${cep},'${cidade}', '${estado}', '${endereco}', ${numero})`, function (err) {
                 if (err) {
                     console.error(err);
                     res.status(500).json({
@@ -87,7 +87,7 @@ module.exports = class ScoreController {
                     })
                 })
             } else if(status_pedido == 'Finalizado' || status_pedido == 'Cancelado'){
-                connection.query(`SELECT * FROM Pedidos WHERE id_cliente_fk = ${cliente} AND status_pedido IN ('Finalizado', 'Cancelado') ORDER BY num_pedido DESC`, function (err, rows) {
+                connection.query(`SELECT * FROM Pedidos WHERE id_cliente_fk = ${cliente} AND status_pedido IN ('Finalizado', 'Cancelado')`, function (err, rows) {
                     res.status(200).json({
                         message: "Pedidos Finalizado / Cancelados!",
                         data: rows
@@ -169,13 +169,13 @@ module.exports = class ScoreController {
             const { id, nome_completo, celular, email, cep, cidade, estado, endereco, numero } = req.body
             connection.query(`
             UPDATE Clientes SET nome_completo = '${nome_completo}',
-            celular = '${celular}',
+            celular = '${parseInt(celular)}',
             email = '${email}',
-            cep = '${cep}',
+            cep = '${parseInt(cep)}',
             cidade = '${cidade}',
             estado = '${estado}',
             endereco = '${endereco}',
-            numero = '${numero}'`,
+            numero = '${parseInt(numero)}' WHERE id = '${parseInt(id)}'`,
                 function (err, rows) {
                     res.status(200).json({
                         message: "Dados do Cliente Atualizados!",

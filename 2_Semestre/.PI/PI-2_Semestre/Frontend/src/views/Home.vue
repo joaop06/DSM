@@ -1,6 +1,5 @@
 <template>
   <v-container fluid>
-    <v-card width="100%" height="100%" :elevation="0" color="rgb(255, 255, 255, 0.4)">
       <v-row class="mt-3 pa-5" justify="space-between">
 
 
@@ -128,7 +127,6 @@
           </v-row>
         </v-col>
       </v-row>
-    </v-card>
 
 
     <v-snackbar v-model="snackbar" top>

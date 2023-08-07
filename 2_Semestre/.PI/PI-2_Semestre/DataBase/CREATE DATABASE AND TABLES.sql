@@ -45,6 +45,8 @@ CREATE TABLE Clientes (
     endereco VARCHAR(255) DEFAULT '',
     numero INT(5) DEFAULT 0
 );
+SELECT * FROM Clientes;
+
 
 CREATE TABLE Admin (
 	id INT PRIMARY KEY AUTO_INCREMENT,

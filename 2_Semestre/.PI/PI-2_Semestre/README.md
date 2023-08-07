@@ -1,6 +1,11 @@
 # PI 2º Semestre
 
 ## Projeto:
+### João Pedro Borges
+### Gabriel Abramovick
+### Fabio Antimo
+### Sócrates Eduardo
+### Dirceu
 
 
 ### Projeto com ideia de um sistema para restaurantes, com objetivo de facilitar as interações entre a empresa e o cliente.

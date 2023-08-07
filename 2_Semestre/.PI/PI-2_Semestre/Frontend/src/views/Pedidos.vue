@@ -24,13 +24,14 @@
       <!-- PEDIDOS EM ANDAMENTO -->
       <v-card v-if="optionBtn" class="ma-auto mt-12" :elevation="0" color="rgb(0,0,0,0)" width="70%">
 
-        <v-card v-if="pedidos.length == 0">
-          <p>Sem pedidos em andamento</p>
+        <v-card v-if="pedidos.length == 0" class="ma-5 pa-10" :elevation="8" color="rgb(188, 170, 164, 0.7)">
+          <v-card :elevation="0" color="rgb(93, 64, 55, 0.9)">
+            <p class="text-h4 text-white ma-auto pa-10" align="center">Não há pedidos Em Andamento</p>
+          </v-card>
         </v-card>
 
-        <v-card v-for="(pedido, index) in pedidos" :key="index"
-          class="ma-2 bg-light-green-lighten-4 d-flex flex-column" border="red" rounded="lg"
-          :style="{ 'border': 'solid 3px #1B5E20' }" :elevation="2">
+        <v-card v-for="(pedido, index) in pedidos" :key="index" class="ma-2 bg-light-green-lighten-4 d-flex flex-column"
+          border="red" rounded="lg" :style="{ 'border': 'solid 3px #1B5E20' }" :elevation="2">
 
           <v-col>
             <span class="d-flex justify-space-between">
@@ -52,8 +53,8 @@
             </v-col>
 
             <v-col>
-              <v-btn @click="alteraStatusPedido(pedido.num_pedido, 'Cancelado')" class="ma-auto text-red" icon="mdi-close-thick"
-                color="rgb(0,0,0,0)" :elevation="0"></v-btn>
+              <v-btn @click="alteraStatusPedido(pedido.num_pedido, 'Cancelado')" class="ma-auto text-red"
+                icon="mdi-close-thick" color="rgb(0,0,0,0)" :elevation="0"></v-btn>
             </v-col>
           </v-col>
 
@@ -64,6 +65,13 @@
 
       <!-- PEDIDOS FINALIZADOS OU CANCELADOS -->
       <v-card v-else class="ma-auto mt-12" :elevation="0" color="rgb(0,0,0,0)" width="70%" height="70%">
+
+        <v-card v-if="pedidos.length == 0" class="ma-5 pa-10" :elevation="8" color="rgb(188, 170, 164, 0.7)">
+          <v-card :elevation="0" color="rgb(93, 64, 55, 0.9)">
+            <p class="text-h4 text-white ma-auto pa-10" align="center">Não há histórico de Pedidos</p>
+          </v-card>
+        </v-card>
+
         <v-sheet v-for="(pedido, index) in pedidos" :key="index" color="rgb(0,0,0,0)" :elevation="0">
 
           <v-card v-if="pedido.status_pedido === 'Cancelado'" class="ma-2 pa-2 bg-grey-lighten-4" border="red"

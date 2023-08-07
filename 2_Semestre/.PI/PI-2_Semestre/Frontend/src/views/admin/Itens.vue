@@ -49,7 +49,9 @@
                         <v-row justify="space-between" no-gutters>
                           <v-card class="font-weight-black d-flex justify-center ma-5 pa-1" color="rgb(255, 255, 255, 0)"
                             :elevation="0">
-                            <span :style="{ 'color': 'white', 'font-weight': 'bold' }">{{ produto.preco }}</span>
+                            <span :style="{ 'color': 'white', 'font-weight': 'bold' }">{{
+                              (parseFloat(produto.preco)).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+                            }}</span>
                           </v-card>
 
                           <v-btn @click="eventActiveUpdtProducts(produto)" class="ma-4 bg-red-accent-3" rounded="lg">
