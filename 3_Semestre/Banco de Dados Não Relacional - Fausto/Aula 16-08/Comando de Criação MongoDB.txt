@@ -1,0 +1,8 @@
+// Listar os bancos de dados existentes
+show dbs;
+
+// Cria um novo BD ou alterna para um já existente
+use estoque;
+
+// Cria uma coleção
+db.createCollection("produtos")
