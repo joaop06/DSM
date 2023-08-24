@@ -3,7 +3,7 @@ const express = require("express")
 const app = express()
 
 var porta = 8080 // Atribuindo o valor da porta a uma variável
-app.listen(porta, () => {console.log(`O servidor está ativo na porta ${porta}`)}) // Colocando o valor da porta no localhost
+app.listen(porta, () => { console.log(`O servidor está ativo na porta ${porta}`) }) // Colocando o valor da porta no localhost
 
 
 let nome = "João Pedro"
@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 })
 
 app.post("/getHTML", (req, res) => {
-    const {nome} = req.body
+    const { nome } = req.body
     console.log(`Olá ${nome}!`)
     nomes.push(nome);
 })
