@@ -3,15 +3,23 @@ import Nome from './Components/Nome'
 
 function App() {
   const [aluno, setAluno] = useState('Aluno')
-  function handleChangeName() {
-    setAluno('João Pedro')
+  function handleChangeName(nome) {
+    setAluno(nome)
+    Nome(nome, 15)
   }
 
   return (
+
     <div>
-      <h1>Minha Página Web!</h1>
-      <h2>Olá {aluno}!</h2>
-      <button onClick={handleChangeName}>Mudar nome</button>
+      <div>
+        <h1>Minha Página Web!</h1>
+        <h2>Olá {aluno}!</h2>
+        <button onClick={() => handleChangeName('João Pedro')}>Mudar nome</button>
+      </div>
+
+      <div>
+        <br /><br /><hr />
+      </div>
     </div>
   );
 }
