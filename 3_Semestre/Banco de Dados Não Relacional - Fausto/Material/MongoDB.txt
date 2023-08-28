@@ -1,0 +1,222 @@
+// Listar os bancos de dados existentes
+show dbs;
+
+// Cria um novo BD ou alterna para um já existente
+use estoque;
+
+// Cria uma coleção
+db.createCollection("produtos");
+
+// Inserindo um produto
+db.produtos.insertOne({
+	nome: "Vassoura de piaçava",
+	preco: 27.80,
+	categoria: "Limpeza"
+});
+
+// Consultando o item inserido
+db.produtos.find();
+
+// Outra inserção
+db.produtos.insertOne({
+	nome: "Café",
+	marca: "Dubom",
+	quantidade: 500,
+	unidade: "g",
+	preco: 17.47,
+	categoria: "Alimentos e bebidas",
+	estoque: 52
+});
+
+// Mais uma inserção
+db.produtos.insertOne({
+  nome_oficial: "República Francesa",
+  nome_comum: "França",
+  capital: "Paris",
+  continente: "Europa",
+  chefe_estado: "Emmanuel Macron",
+  lingua_oficial: "francês"
+});
+
+// Inserção com subdocumento (no caso, o fornecedor)
+db.produtos.insertOne({
+  nome: "Biscoito",
+	marca: "Crocantão",
+	quantidade: 200,
+	unidade: "g",
+	preco: 4.19,
+	categoria: "Alimentos e bebidas",
+	estoque: 100,
+	fornecedor: {
+	  nome: "Indústria de Alimentos Bacana S/A",
+	  cnpj: "01.234.567/0001-89"
+	}
+});
+
+// Mais um produto com subdocumento
+db.produtos.insertOne({
+  nome: "Doce de leite",
+  marca: "Mineirim",
+  preco: 15.87,
+  fornecedor: {
+	  nome: "Indústria de Alimentos Bacana S/A",
+	  cnpj: "01.234.567/0001-89"
+	}
+});
+
+// Listando todos os produtos ordenados por nome (ascendente = 1)
+db.produtos.find().sort({ nome: 1 });
+
+// Listando apenas o produto cujo nome é "Café"
+db.produtos.find({ nome: "Café" });
+
+// Listando todos os produtos fornecidos pelo CNPJ 01.234.567/0001-89
+db.produtos.find({ "fornecedor.cnpj" : "01.234.567/0001-89" });
+
+// Produto com mais de um fornecedor (vetor de subdocumentos)
+db.produtos.insertOne({
+  nome: "Paçoca",
+  marca: "Junina",
+  preco: 20.65,
+  fornecedor: [
+      {
+    	  nome: "Indústria de Alimentos Bacana S/A",
+    	  cnpj: "01.234.567/0001-89"
+    	},
+    	{
+    	  nome: "Distribuidora de Doces Pingo de Mel Ltda.",
+    	  cnpj: "98.765.432/0001-10"
+    	}
+  ]
+});
+
+// Inserção de produto com campo multivalorado
+db.produtos.insertOne({
+  nome: "Bicarbonato de sódio",
+  marca: "Q-Rende",
+  preco: 3.45,
+  categoria: [
+    "Alimentos e bebidas",
+    "Limpeza"
+  ],
+  fornecedor: {
+		nome: "Distribuidora de Doces Pingo de Mel Ltda.",
+		cnpj: "98.765.432/0001-10"
+  }
+});
+
+// Busca pela categoria "Limpeza"
+db.produtos.find({ categoria: "Limpeza" });
+
+// Busca pelos produtos que NÃO SÃO da categoria "Limpeza"
+// Operador $ne = not equal
+db.produtos.find({ categoria: { $ne: "Limpeza" }});
+
+// Busca pelos produtos cujo preço é maior que 20.00
+// Operador $gt = greater than
+db.produtos.find({ preco: { $gt: 20 }});
+
+// Adicionando novo campo a um objeto já existente
+db.produtos.updateOne(
+  {
+    nome: "Paçoca"
+  }, 
+  {
+    $set: {
+      categoria: "Alimentos e bebidas"
+    }
+  }
+);
+
+// Alterando o valor de um campo já existente
+// no produto "Café" (_id: ObjectId("64e3ec5854c99c473c8a9033"))
+db.produtos.updateOne({
+  _id: ObjectId("64e3ec5854c99c473c8a9033")
+}, {
+  $set: { 
+    nome: "Café",
+    marca: "Alta Mogiana"
+  }
+});
+
+// Decrementando a quantidade do estoque do produto
+// "Biscoito" (_id: ObjectId("64e3ec7f54c99c473c8a9035"))
+// (Diminuição de 10 unidades no estoque)
+db.produtos.updateOne({
+  _id: ObjectId("64e3ec7f54c99c473c8a9035")
+}, {
+  $inc: { estoque: -10 }
+});
+
+// Aumentando o preço do "Doce de leite" ( _id: ObjectId("64e3ec8a54c99c473c8a9036"))
+// em 2.50
+db.produtos.updateOne({
+   _id: ObjectId("64e3ec8a54c99c473c8a9036")
+}, {
+  $inc: { preco: 2.50 }
+})
+
+// Aumentando todos os preços em 10%
+// só nos documentos onde exista o campo "preco"
+db.produtos.updateMany({ 
+  preco: { $exists: true }
+}, {
+  $mul: { preco: 1.1 }
+});
+
+// Excluindo a intrusa "República Francesa"
+// ( _id: ObjectId("64e3ec7554c99c473c8a9034"))
+db.produtos.deleteOne({
+   _id: ObjectId("64e3ec7554c99c473c8a9034")
+});
+
+// Excluindo todos os produtos cujo preço seja < 20
+db.produtos.deleteMany({
+  preco: { $lt: 20 }
+});
+
+// Criando um novo banco de dados e ativando-o
+use revenda;
+
+// Inserindo três modelos de carro
+db.modelos.insertMany([
+  {
+    nome: "Opala",
+    marca: "Chevrolet"
+  },
+  {
+    nome: "Fusca",
+    marca: "Volkswagen"  
+  },
+  {
+    nome: "Corcel",
+    marca: "Ford"
+  }
+]);
+
+// Inserindo um Fusca
+db.veiculos.insertOne({
+  modelo_id: "64e6922acdb0a36292485e3b",
+  cor: "Azul",
+  ano: 1978,
+  placa: "ABC-1234",
+  preco: 5000
+});
+
+// Inserindo um Corcel e um Opala
+db.veiculos.insertMany([
+  {
+    modelo_id: "64e6922acdb0a36292485e3c",  // Corcel
+    cor: "Vermelho",
+    ano: 1975,
+    placa: "DEF-9876",
+    preco: 6200
+  },
+  {
+    modelo_id: "64e6922acdb0a36292485e3a",  // Opala
+    cor: "Preto",
+    ano: 1981,
+    placa: "GHI-3333",
+    preco: 7500
+  }
+]);
