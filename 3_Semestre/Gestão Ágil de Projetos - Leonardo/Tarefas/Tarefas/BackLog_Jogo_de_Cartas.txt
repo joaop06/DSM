@@ -1,0 +1,40 @@
+Projeto: Jogo de Cartas em 2D
+
+A Empresa "X" encontra-se imersa na criação de um empolgante jogo de cartas em 2D. Nossa tarefa, como gestores de projeto, é conceber e elavorar um backlog abrangente que englobe todo o processo de desenvolvimento do jogo.
+
+1º Sprint -> GDD:
+    - Game Desgn Document
+    - Problema
+    - UX/UI Research
+        - Concept
+        - Animação
+        - Level Design
+    - Mecânicas
+
+2º Sprint -> Prototipação
+    - White Label -> Dranwing:
+    - Engine -> Unity, Unrcal, Godot, Construct, Game maker...
+    - Art:
+        - Sprints
+        - Animação
+        - Objeto, Block, Components
+
+3ª Sprint - Desenvolvimento:
+    - Transformar as mecânicas do jogo em código.
+    - Criar o backend para gerenciar dados do jogo.
+    - Incluir arte, animações e UI no jogo.
+
+4ª Sprint - Testes:
+    - Testar partes individuais do jogo.
+    - Verificar como os diferentes componentes interagem.
+    - Testar a jogabilidade, corrigir bugs e ajustar.
+
+5ª Sprint - Implantação:
+    - Preparar o jogo para ser lançado.
+    - Testar e certificar o jogo para diferentes plataformas.
+    - Criar os pacotes de distribuição.
+
+6ª Sprint - Publicação:
+    - Lançar o jogo nas lojas ou plataformas.
+    - Promover o jogo através de marketing.
+    - Acompanhar o desempenho pós-lançamento e ajustar conforme necessário.
