@@ -12,6 +12,7 @@ function App() {
       <h1>Minha Página Web!</h1>
       <h2>Olá {aluno}!</h2>
       <button onClick={handleChangeName}>Mudar nome</button>
+      <Nome aluno="João Pedro" />
     </div>
   );
 }

@@ -1,26 +1,53 @@
+import { useState } from "react"
+
 function Cadastro() {
+    const [nameUser, setNameUser] = useStatel('')
+    const [email, setEmail] = useStatel('')
+    const [age, setAge] = useStatel('')
+
+    const [user, setUser] = useStatel({})
+
+    function handleRegister(e) {
+        e.preventDefault()
+
+        setUser({
+            nameUser: nameUser,
+            email: email,
+            age: age,
+        })
+    }
+
+
     return (
         <div>
+            <form onSubmit={handleRegister}>
+                <label>Nome: </label><br />
+                <input placeholder='Digite seu Nome'
+                    value={nameUser}
+                    onChange={(e) => setNome(e.target.value)}
+                /><br />
 
-            <form>
-                <div style={{ display: "flex", flexDirection: "column", marginBottom: 10 + 'px' }}>
-                    <label for="name">Nome:</label>
-                    <input style={{ width: 200 }} type="text" id="name" name="name"></input>
-                </div>
+                <label>Email: </label><br />
+                <input placeholder='Digite seu Email'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                /><br />
 
-                <div style={{ display: "flex", flexDirection: "column", marginBottom: 10 + 'px' }}>
-                    <label for="email">E-mail:</label>
-                    <input style={{ width: 200 }} type="email" id="email" name="email"></input>
-                </div>
+                <label>Idade: </label><br />
+                <input placeholder='Digite sua Idade'
+                    value={age}
+                    onChange={(e) => setIdade(e.target.value)}
+                /><br />
 
-                <div style={{ display: "flex", flexDirection: "column", marginBottom: 10 + 'px' }}>
-                    <label for="age">Idade:</label>
-                    <input style={{ width: 200 }} type="text" id="age" name="age"></input>
-                </div>
+                <button type='submit'>Registro</button>
+            </form>
 
-                <button type="submit">Enviar</button>
-            </form >
-
+            <br /><br />
+            <div>
+                <span>Bem vindo, {user.nome}</span><br />
+                <span>Idade: {user.idade}</span><br />
+                <span>Email: {user.email}</span><br />
+            </div>
         </div >
     )
 }
