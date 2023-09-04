@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Aluno {
+  id                @id @default(auto()) @map("_id")
+  nome              String
+  data_nascimento   DateTime
+  logadouro         String
+  num_imovel        String
+  complemento?      String
+  bairro            String
+  municipio         String
+  uf                String
+  email             String
+  telefone          String
+  turmas            
+}
