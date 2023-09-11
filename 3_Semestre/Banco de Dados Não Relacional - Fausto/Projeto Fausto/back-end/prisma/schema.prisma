@@ -10,17 +10,86 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Nivel {
+  BASICO
+  INTERMEDIARIO
+  AVANCADO
+}
+
+enum Area {
+  HUMANAS
+  EXATAS
+  BIOLOGICAS
+}
+
+enum Uf {
+  DF
+  ES
+  GO
+  MG
+  MS
+  PR
+  RJ
+  SP
+}
+
+enum DiaSemana {
+  DOM
+  SEG
+  TER
+  QUA
+  QUI
+  SEX
+  SAB
+}
+
+model Curso {
+  id         String  @id @default(auto()) @map("_id") @db.ObjectId
+  nome       String
+  nivel      Nivel   @default(BASICO)
+  area       Area
+  valorTotal Float
+  turmas     Turma[]
+}
+
+model Professor {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  nome           String
+  formacao       String
+  cpf            String   @unique
+  dataNascimento DateTime
+  email          String   @unique
+  telefone       String
+  turmas         Turma[]
+}
+
 model Aluno {
-  id                @id @default(auto()) @map("_id")
-  nome              String
-  data_nascimento   DateTime
-  logadouro         String
-  num_imovel        String
-  complemento?      String
-  bairro            String
-  municipio         String
-  uf                String
-  email             String
-  telefone          String
-  turmas            
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  nome           String
+  cpf            String   @unique
+  dataNascimento DateTime
+  logradouro     String
+  numImovel      String
+  complemento    String? // Campo opcional
+  bairro         String
+  municipio      String
+  uf             Uf
+  email          String   @unique
+  telefone       String
+  turmaIds       String[] @db.ObjectId
+  turmas         Turma[]  @relation(fields: [turmaIds], references: [id])
+}
+
+model Turma {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  cursoId     String     @db.ObjectId
+  curso       Curso      @relation(fields: [cursoId], references: [id])
+  professorId String?    @db.ObjectId
+  professor   Professor? @relation(fields: [professorId], references: [id])
+  diaSemana   String
+  horaInicial Int
+  horaFinal   Int
+  ativa       Boolean    @default(true)
+  alunoIds    String[]   @db.ObjectId
+  alunos      Aluno[]    @relation(fields: [alunoIds], references: [id])
 }

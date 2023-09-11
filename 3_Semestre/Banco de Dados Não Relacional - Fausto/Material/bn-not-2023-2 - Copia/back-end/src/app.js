@@ -15,10 +15,4 @@ app.use(cookieParser());
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
-
-// Rota para Cursos
-import cursoRoute from './routes/curso.js'
-app.use('/curso', cursoRoute)
-
-
 export default app;
