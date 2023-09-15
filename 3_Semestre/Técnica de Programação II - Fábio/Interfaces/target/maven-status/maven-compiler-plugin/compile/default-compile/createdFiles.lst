@@ -1,0 +1,4 @@
+gui\interfaces\Interfaces.class
+gui\interfaces\FechamentoLetivoInterface.class
+gui\interfaces\FechamentoFatec.class
+gui\interfaces\Sistema.class
