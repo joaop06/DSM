@@ -4,7 +4,7 @@ const controller = {}   // Objeto vazio
 
 controller.create = async (req, res) => {
     try {
-        await prisma.curso.create({ data: req.body })
+        await prisma.professor.create({ data: req.body })
 
         // HTTP 201: Created
         res.status(201).end()
@@ -19,12 +19,7 @@ controller.retrieveAll = async (req, res) => {
     try {
         // Manda buscar os dados no servidor
         // Traz ordenado por nome, depois por nivel
-        const result = await prisma.curso.findMany({
-            orderBy: [
-                { nome: 'asc' },  // Ordem ascendente
-                { nivel: 'asc' }  // Ordem ascendente
-            ]
-        })
+        const result = await prisma.professor.findMany({})
 
         res.send(result)
     }
@@ -36,7 +31,7 @@ controller.retrieveAll = async (req, res) => {
 
 controller.retrieveOne = async (req, res) => {
     try {
-        const result = await prisma.curso.findUnique({ where: { id: req.params.id } })
+        const result = await prisma.professor.findUnique({ where: { id: req.params.id } })
 
         if (result) res.send(result)
         else res.status(404).end()
@@ -49,7 +44,7 @@ controller.retrieveOne = async (req, res) => {
 
 controller.update = async (req, res) => {
     try {
-        const result = await prisma.curso.update({
+        const result = await prisma.professor.update({
             where: { id: req.params.id },
             data: req.body
         })
@@ -65,7 +60,7 @@ controller.update = async (req, res) => {
 
 controller.delete = async (req, res) => {
     try {
-        const result = await prisma.curso.delete({ where: { id: req.params.id } })
+        const result = await prisma.professor.delete({ where: { id: req.params.id } })
 
         if (result) res.status(204).end()
         else res.status(404).end()
