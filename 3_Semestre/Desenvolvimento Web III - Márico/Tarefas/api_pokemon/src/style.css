@@ -4,6 +4,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
 img {
@@ -20,11 +21,26 @@ img {
     display: flex;
 }
 
+.info div {
+    font-weight: bold;
+    color: #f75450;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 250px;
+}
+
 .divInfo {
     text-align: center;
     justify-content: center;
     align-items: center;
-    border: 2px solid grey;
+    border: 2px solid #f75450;
     padding: 2%;
     width: 50%;
 }
@@ -33,6 +49,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f5f5f5;
 }
 
 header {
@@ -44,4 +61,46 @@ header {
     width: 100%;
     background-color: gold;
     color: white;
+    text-transform: uppercase;
+}
+
+.pokeball-button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.pokeball-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    /* Espaço entre o ícone e o texto do botão */
+}
+
+
+#nomePokemon {
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #f75450;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 300px;
+}
+
+button[type="button"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f75450;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="button"]:hover {
+    background-color: #cc3731;
 }

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
+import pokeballIcon from './icons/pokeball.svg';
 import './style.css'
 
 function App() {
   const [pokemon, setPokemon] = useState([])
-  const [name_pokemon, setNamePokemon] = useState("")
+  const [name_pokemon, setNamePokemon] = useState("pikachu")
 
   function loadApi(namePokemon) {
     let url = `https://pokeapi.co/api/v2/pokemon/${namePokemon}`
@@ -17,7 +18,7 @@ function App() {
   }
 
   const handleNamePokemon = (event) => {
-    setNamePokemon(event.target.value)
+    setNamePokemon(event.target.value.toLowerCase()) // Convertendo para minúsculo
   }
 
   const findPokemon = () => {
@@ -26,15 +27,14 @@ function App() {
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      findPokemon()
+      if (name_pokemon) {
+        findPokemon()
+      }
     }
   }
 
-
-
   useEffect(() => {
-    loadApi('dugtrio')
-    console.log(pokemon)
+    loadApi('pikachu') // Valor inicial
   }, [])
 
   return (
@@ -49,12 +49,17 @@ function App() {
         value={name_pokemon}
         onChange={handleNamePokemon}
         onKeyPress={handleKeyPress}
-
       />
-      <button type="button" onClick={findPokemon}>Buscar Pokemon</button>
+      <button type="button" onClick={findPokemon} className="pokeball-button">
+        <img src={pokeballIcon} alt="Pokeball" className="pokeball-icon" />
+        Buscar Pokemon
+      </button>
 
       <div className="pokemon">
-        <img src={pokemon.sprites?.front_default} alt={pokemon.name} />
+        <div className="img-container">
+          <img src={pokemon.sprites?.front_default} alt={pokemon.name} />
+        </div>
+
         <div className="info">
           <div className='divInfo'>
             <div>Nome: {pokemon.name}</div>
@@ -72,7 +77,6 @@ function App() {
 
             <div>Vida: {pokemon.stats ? pokemon.stats[0]?.base_stat : null}</div>
             <div>Velocidade: {pokemon.stats ? pokemon.stats[5]?.base_stat : null}</div>
-
           </div>
         </div>
       </div>
