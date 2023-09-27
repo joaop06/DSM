@@ -10,38 +10,10 @@ package com.mycompany.atividade01.exercicio01;
  */
 public class Venda {
 
-    int codigo;
-    Double valor;
-    int quantitade;
-    
-    
-    public Venda(int codigo, double valor, int quantidade){
-        this.codigo = codigo;
-        this.valor = valor;
-        this.quantitade = quantidade;
-    }
-    
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
+    public Double Venda(int codigo_produto, Double valor_unitario, int quantidade){
 
-    public void setValor(Double valor) {
-        this.valor = valor;
-    }
-
-    public void setQuantitade(int quantitade) {
-        this.quantitade = quantitade;
-    }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public Double getValor() {
-        return valor;
-    }
-
-    public int getQuantitade() {
-        return quantitade;
+        Double valorTotal = valor_unitario * quantidade;
+        
+        return valorTotal;
     }
 }
