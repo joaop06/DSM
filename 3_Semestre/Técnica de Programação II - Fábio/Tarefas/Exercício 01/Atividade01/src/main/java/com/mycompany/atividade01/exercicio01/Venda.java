@@ -10,7 +10,7 @@ package com.mycompany.atividade01.exercicio01;
  */
 public class Venda {
 
-    public Double Venda(int codigo_produto, Double valor_unitario, int quantidade){
+    public Double calcularValorTotal(int codigo_produto, Double valor_unitario, int quantidade){
 
         Double valorTotal = valor_unitario * quantidade;
         

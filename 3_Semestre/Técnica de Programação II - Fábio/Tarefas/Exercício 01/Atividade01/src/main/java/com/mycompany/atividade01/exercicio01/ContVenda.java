@@ -10,19 +10,18 @@ import java.util.Scanner;
  *
  * @author joaoo
  */
-public class Main {
+public class ContVenda {
     
-    public static void main(String args){
+    public Double[] main(){
         Scanner scanner = new Scanner(System.in);
 
-                
         Double[] todasVendas = new Double[10];
         
         for(int i = 1; i <= 10; i++){
             System.out.printf("************** %dª Venda **************", i);
             
             
-            System.out.printf("Código do Produto: ");
+            System.out.printf("\nCódigo do Produto: ");
             int codigo_produto = scanner.nextInt();
             
             System.out.printf("Valor unitário: ");
@@ -34,11 +33,13 @@ public class Main {
 
             Venda venda = new Venda();
             
-            todasVendas[i - 1] = venda.Venda(codigo_produto, valor_unitario, quantidade);
-            
-            for(int j = 0; j < 10; j++){
-                System.out.printf("%dª Venda: R$ %.2f\n", j + 1, todasVendas[j]);
-            }
+            todasVendas[i - 1] = venda.calcularValorTotal(codigo_produto, valor_unitario, quantidade);
         }
+        
+        for(int j = 0; j < 10; j++){
+            System.out.printf("Total %dª Venda: R$ %.2f\n", j + 1, todasVendas[j]);
+        }
+        
+        return todasVendas;
     }
 }
