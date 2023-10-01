@@ -1,0 +1,9 @@
+1- Variável é uma alocação de memória para armazenamento de informações. Para declarar uma variável é preciso informar o tipo da variável, o nome e pode ou não ser informado um valor inicial
+
+2- Linguagens compiladas: O código é transformado em um programa executável antes de ser usado.
+Linguagens interpretadas: O código é lido e executado linha por linha por um programa chamado interpretador.
+Java se encaixa em ambos os contextos. É compilado em um formato especial chamado bytecode e depois interpretado por uma máquina virtual chamada JVM quando é executado. Isso torna o Java uma linguagem híbrida.
+
+3- Classe: Classe é como um modelo, por exemplo, uma classe "Carro" descreve como um carro deve ser.
+
+Objeto: É uma coisa real que segue o modelo da Classe. "Carro Azul da Marca Toyota" é um carro real construído com base na descrição da Classe.

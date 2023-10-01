@@ -1,4 +1,0 @@
-Exercício 1:
- 1- Variável é uma alocação de memória para armazenamento de informações. Para declarar uma variável é preciso informar o tipo da variável, o nome e pode ou não ser informado um valor inicial
-
- 2-
