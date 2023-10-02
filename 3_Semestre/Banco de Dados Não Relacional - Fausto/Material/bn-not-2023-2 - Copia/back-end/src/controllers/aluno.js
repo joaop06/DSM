@@ -25,7 +25,6 @@ controller.create = async function(req, res) {
 controller.retrieveAll = async function(req, res) {
   try {
     // Manda buscar os dados no servidor
-    // Traz ordenado por nome, depois por nivel
     const result = await prisma.aluno.findMany({
       orderBy: [
         { nome: 'asc' }  // Ordem ascendente
