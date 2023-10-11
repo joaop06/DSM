@@ -1,0 +1,49 @@
+// Criando uma tabela `users`
+create table cassandra.users(
+	id int,
+	country text,
+	first_name text,
+	last_name text,
+	active boolean,
+	primary key(id)
+);
+
+// Para retornar todos os registros da column family
+select * from cassandra.users;
+
+// Inserção de registros na column family ("tabela")
+insert into cassandra.users(id, country, first_name, last_name, active)
+values(1, 'BR', 'Tonho', 'Torresmo', true);
+
+// Inserção de registros na column family ("tabela")
+insert into cassandra.users(id, country, first_name, active)
+values(2, 'AR', 'Maria', false);
+
+// Inserção de registros na column family ("tabela")
+insert into cassandra.users(id, country, first_name, last_name)
+values(3, 'BR', 'Joaquina', 'Jesuína');
+
+// Inserção de registros na column family ("tabela")
+insert into cassandra.users(id, country, first_name, last_name, active)
+values(4, 'US', 'John', 'Doe', true);
+
+// Selecionando user com `id` = 2
+select * from cassandra.users where id = 2;
+
+// Selecionando users com `country` = 'BR'
+select * from cassandra.users where country = 'BR';
+
+// Recriando a tabela users
+create table cassandra.users(
+	id int,
+	country text,
+	first_name text,
+	last_name text,
+	active boolean,
+	primary key(country, id)
+);
+
+// Criando um index
+create index idx_first_name on cassandra.users(first_name);
+
+select * from cassandra.users where country = 'AR' and first_name = 'Maria';
