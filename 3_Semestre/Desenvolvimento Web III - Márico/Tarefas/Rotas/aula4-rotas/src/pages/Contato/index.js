@@ -15,7 +15,7 @@ function Contato() {
         <div>
             <h2>Contatos</h2>
             <MapComponent
-                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_AQUI`}
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyC0VH8GOMSd1NP3IDWnMliUI3KdC4iCaFo`}
                 loadingElement={<div style={{ height: '100%' }} />}
                 containerElement={<div style={{ height: '100%' }} />}
                 mapElement={<div style={{ height: '100%' }} />}

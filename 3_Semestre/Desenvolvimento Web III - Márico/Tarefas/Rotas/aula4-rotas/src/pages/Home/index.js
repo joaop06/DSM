@@ -6,8 +6,7 @@ function Home() {
             <h1>Página Home</h1>
             <span>Nossa primeira aplicação em REACT</span><br /><br /><br />
 
-            <h1>Acesse nossa loja!</h1>
-            <Link to='/loja' />
+            <h1>Acesse nossa <span><Link to='/loja' >Loja!</Link></span></h1>
         </div>
     )
 }
