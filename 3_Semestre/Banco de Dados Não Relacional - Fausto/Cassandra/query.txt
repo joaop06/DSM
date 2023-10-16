@@ -47,3 +47,32 @@ create table cassandra.users(
 create index idx_first_name on cassandra.users(first_name);
 
 select * from cassandra.users where country = 'AR' and first_name = 'Maria';
+
+
+// ************************ Aula 16-10 ************************ \\
+// Obtendo informações sobre o keyspace ("banco de dados)
+describe cassandra;
+
+
+// Obtendo informações sobre uma column family
+describe cassandra.users;
+
+
+// Alterando a column family para acrescentar novos campos
+alter table cassandra.users add
+favs map<text, text>;
+
+alter table cassandra.users
+add interests set<text>,
+
+alter table cassandra.users
+add friends list<text>;
+
+
+// Atualização de linha
+update cassandra.users
+set last_name = 'López'
+where country = 'AR' and id = 2;	// Chave primária inteira
+
+
+// 
