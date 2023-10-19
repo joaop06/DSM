@@ -1,0 +1,39 @@
+// Criando a tabela (Column Family) "carros"
+CREATE TABLE cassandra.carros (
+    id int,
+    marca text,
+    placa text,
+    modelo text,
+    cor text,
+    combustivel set<text>,
+    ano_fabric int,
+    preco decimal,
+    PRIMARY KEY (marca, placa, id)
+);
+
+
+// Inserindo novos carros na Column Family
+INSERT INTO cassandra.carros (id, marca, placa, modelo, cor, combustivel, ano_fabric, preco)
+VALUES (1, 'Toyota', 'ABC123', 'Corolla', 'Prata', {'Gasolina', 'Etanol'}, 2023, 75000.50);
+
+INSERT INTO cassandra.carros (id, marca, placa, modelo, cor, combustivel, ano_fabric, preco)
+VALUES (2, 'Ford', 'XYZ789', 'Focus', 'Azul', {'Gasolina'}, 2022, 60000.75);
+
+
+INSERT INTO cassandra.carros (id, marca, placa, modelo, cor, combustivel, ano_fabric, preco)
+VALUES (3, 'Honda', 'DEF456', 'Civic', 'Preto', {'Gasolina', 'Etanol'}, 2021, 65000.25);
+
+INSERT INTO cassandra.carros (id, marca, placa, modelo, cor, combustivel, ano_fabric, preco)
+VALUES (4, 'Volkswagen', 'GHI789', 'Golf', 'Branco', {'Diesel'}, 2020, 55000.00);
+
+INSERT INTO cassandra.carros (id, marca, placa, modelo, cor, combustivel, ano_fabric, preco)
+VALUES (5, 'Chevrolet', 'JKL123', 'Cruze', 'Vermelho', {'Gasolina', 'Etanol'}, 2023, 70000.30);
+
+INSERT INTO cassandra.carros (id, marca, placa, modelo, cor, combustivel, ano_fabric, preco)
+VALUES (6, 'Nissan', 'MNO456', 'Sentra', 'Cinza', {'Gasolina', 'Etanol'}, 2022, 62000.90);
+
+INSERT INTO cassandra.carros (id, marca, placa, modelo, cor, combustivel, ano_fabric, preco)
+VALUES (7, 'Mitsubishi', 'PQR789', 'Lancer', 'Prata', {'Gasolina'}, 2022, 63000.40);
+
+INSERT INTO cassandra.carros (id, marca, placa, modelo, cor, combustivel, ano_fabric, preco)
+VALUES (8, 'Hyundai', 'STU123', 'Elantra', 'Preto', {'Gasolina', 'Etanol'}, 2023, 72000.10);

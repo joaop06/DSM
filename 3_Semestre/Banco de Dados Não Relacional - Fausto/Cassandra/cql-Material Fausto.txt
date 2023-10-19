@@ -1,0 +1,115 @@
+// Criação da column family "users" no keyspace "cassandra"
+create table cassandra.users(
+	id int,
+	country text,
+	first_name text,
+	last_name text,
+	active boolean,
+	primary key(id)
+);
+
+// Para retornar todos os registros da column family
+select * from cassandra.users;
+
+// Inserção de registros na column family ("tabela")
+insert into cassandra.users(id, country, first_name, last_name, active)
+values(1, 'BR', 'Tonho', 'Torresmo', true);
+
+insert into cassandra.users(id, country, first_name, active)
+values(2, 'AR', 'María', false);
+
+insert into cassandra.users(id, country, first_name, last_name)
+values(3, 'BR', 'Joaquina', 'Jesuína');
+
+insert into cassandra.users(id, country, first_name, last_name, active)
+values(4, 'US', 'John', 'Doe', true);
+
+// Comando para excluir a column family
+drop table cassandra.users;
+
+// Recriando a column family
+create table cassandra.users(
+	id int,
+	country text,
+	first_name text,
+	last_name text,
+	active boolean,
+	primary key(country, id)
+);
+
+// Criando um índice secundário em um campo
+// para possibilitar consultas a ele
+create index idx_first_name on cassandra.users(first_name);
+
+// Obtendo informações sobre o keyspace ("banco de dados")
+describe cassandra;
+
+// Obtendo informações sobre uma column family
+describe cassandra.users;
+
+// Alterando a column family para acrescentar novos campos
+alter table cassandra.users 
+add favs map<text, text>;
+
+alter table cassandra.users 
+add interests set<text>;
+
+alter table cassandra.users 
+add friends list<text>;
+
+// Atualização de linha
+update cassandra.users
+set last_name = 'López'
+where country = 'AR' and id = 2;	// Chave primária inteira
+
+// TRABALHANDO COM MAPS
+// Inserindo um map (equivale a um JSON em outros bancos de dados)
+update cassandra.users
+set favs = {'food': 'torresmo', 'car': 'Caminhonete Rural' }
+where country = 'BR' and id = 1;
+
+update cassandra.users
+set favs = {'food': 'hamburger', 'sport': 'basebal', 'color': 'green', 
+'luck_number': '7' }
+where country = 'US' and id = 4;
+
+// TRABALHANDO COM UM SET
+// Um set é um conjunto de itens, sem repetição
+update cassandra.users
+set interests = { 'moda', 'educação', 'viagens', 'moda', 'línguas' }
+where country = 'BR' and id = 3;
+
+// TRABALHANDO COM LISTAS
+// Listas são semelhantes a conjuntos, mas permitem repetições
+update cassandra.users
+set friends = ['Zefa S.', 'Turíbio X.', 'Jupira B.', 'Turíbio X.' ]
+where country = 'BR' and id = 1;
+
+// ATUALIZANDO PARA INCLUIR UM NOVO FAVORITO (MAP)
+update cassandra.users
+set favs['drink'] = 'cerveja'
+where country = 'BR' and id = 1;
+
+// EXCLUINDO UM ITEM DE MAP
+delete favs['sport'] from cassandra.users
+where country = 'US' and id = 4;
+
+// ATUALIZANDO PARA INCLUIR UM NOVO INTERESSE (SET)
+update cassandra.users
+set interests = interests + { 'esportes radicais', 'música' }
+where country = 'BR' and id = 3;
+
+// ATUALIZANDO PARA EXCLUIR INTERESSES (SET)
+update cassandra.users
+set interests = interests - { 'moda', 'viagens' }
+where country = 'BR' and id = 3;
+
+// ATUALIZANDO PARA INCLUIR NOVOS AMIGOS (LIST)
+update cassandra.users
+set friends = friends + [ 'Gilvanete J.', 'Wesclerson R.' ]
+where country = 'BR' and id = 1;
+
+// EXCLUIR AMIGOS (LIST) - deve-se passar a POSIÇÃO
+// *está de acordo com a documentação, mas não funciona*
+delete friends[3] from cassandra.users
+where country = 'BR' and id = 1;
