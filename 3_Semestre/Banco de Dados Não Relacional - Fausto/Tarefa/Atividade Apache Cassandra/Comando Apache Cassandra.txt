@@ -12,6 +12,7 @@ CREATE TABLE cassandra.carros (
 );
 
 
+
 // Inserindo novos carros na Column Family
 INSERT INTO cassandra.carros (id, marca, placa, modelo, cor, combustivel, ano_fabric, preco)
 VALUES (1, 'Toyota', 'ABC123', 'Corolla', 'Prata', {'Gasolina', 'Etanol'}, 2023, 75000.50);
@@ -37,3 +38,17 @@ VALUES (7, 'Mitsubishi', 'PQR789', 'Lancer', 'Prata', {'Gasolina'}, 2022, 63000.
 
 INSERT INTO cassandra.carros (id, marca, placa, modelo, cor, combustivel, ano_fabric, preco)
 VALUES (8, 'Hyundai', 'STU123', 'Elantra', 'Preto', {'Gasolina', 'Etanol'}, 2023, 72000.10);
+
+
+
+// Atualizando registros na tabela
+UPDATE cassandra.carros SET preco = 76000.00 WHERE id = 1 AND marca = 'Toyota' AND placa = 'ABC123';
+
+UPDATE cassandra.carros SET combustivel = combustivel + {'Etanol'} WHERE id = 2 AND marca = 'Ford' AND placa = 'XYZ789';
+
+UPDATE cassandra.carros SET cor = 'Prata' WHERE id = 4 AND marca = 'Volkswagen' AND placa = 'GHI789';
+
+
+
+// Deletando registro
+DELETE FROM cassandra.carros WHERE id = 6 AND marca = 'Nissan' AND placa = 'MNO456';
