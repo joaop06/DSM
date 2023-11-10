@@ -1,0 +1,88 @@
+// ************ Criando os Nodos de Pessoas ************
+create (p:Person {name: "João Pedro", birth_date: "2003-10-30"})
+return p;
+
+create (p:Person {name: "Maria", birth_date: "2006-10-11"})
+return p;
+
+create (p:Person {name: "Jorginho", birth_date: "2015-12-14"})
+return p;
+
+create (p:Person {name: "Flavinha", birth_date: "2017-06-20"})
+return p;
+
+
+// ************ Criando o Nodo de Carro ************
+create (c:Car {name: "Fusion", fuel: "gasolina"})
+return c;
+
+
+// ************ Criando os Relacionamentos entre Pessoas ************
+match (f:Person {name: "João Pedro"})
+match (l:Person {name: "Maria"})
+create (f)-[:MARIDO_DE]->(l)
+return f, l;
+
+match (f:Person {name: "Maria"})
+match (l:Person {name: "João Pedro"})
+create (f)-[:ESPOSA_DE]->(l)
+return f, l;
+
+match (f:Person {name: "Jorginho"})
+match (l:Person {name: "João Pedro"})
+create (f)-[:FILHO_DE]->(l)
+return f, l;
+
+match (f:Person {name: "Jorginho"})
+match (l:Person {name: "Maria"})
+create (f)-[:FILHO_DE]->(l)
+return f, l;
+
+match (f:Person {name: "Flavinha"})
+match (l:Person {name: "João Pedro"})
+create (f)-[:FILHA_DE]->(l)
+return f, l;
+
+match (f:Person {name: "Flavinha"})
+match (l:Person {name: "Maria"})
+create (f)-[:FILHA_DE]->(l)
+return f, l;
+
+match (f:Person {name: "Maria"})
+match (l:Person {name: "Flavinha"})
+create (f)-[:MAE_DE]->(l)
+return f, l;
+
+match (f:Person {name: "Maria"})
+match (l:Person {name: "Jorginho"})
+create (f)-[:MAE_DE]->(l)
+return f, l;
+
+match (f:Person {name: "João Pedro"})
+match (l:Person {name: "Flavinha"})
+create (f)-[:PAI_DE]->(l)
+return f, l;
+
+match (f:Person {name: "João Pedro"})
+match (l:Person {name: "Jorginho"})
+create (f)-[:PAI_DE]->(l)
+return f, l;
+
+match (f:Person {name: "Jorginho"})
+match (l:Person {name: "Flavinha"})
+create (f)-[:IRMAO_DE]->(l)
+return f, l;
+
+match (f:Person {name: "Flavinha"})
+match (l:Person {name: "Jorginho"})
+create (f)-[:IRMA_DE]->(l)
+return f, l;
+
+
+// ************ Criando Relacionamentos entre Pessoa e Carro ************
+match (p:Person) where p.name contains "Flavinha"
+match (c:Car) where c.model contains "Fusion"
+create (c)<-[:POSSUI]-(f)
+return c, p;
+
+
