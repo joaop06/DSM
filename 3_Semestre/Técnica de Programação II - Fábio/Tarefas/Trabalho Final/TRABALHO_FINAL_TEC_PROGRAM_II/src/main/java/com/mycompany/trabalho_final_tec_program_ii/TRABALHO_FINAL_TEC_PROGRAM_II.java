@@ -10,6 +10,16 @@ import com.mycompany.trabalho_final_tec_program_ii.questao01.Aereo;
 import com.mycompany.trabalho_final_tec_program_ii.questao02.ImpostoSP;
 import com.mycompany.trabalho_final_tec_program_ii.questao02.ImpostoMG;
 
+import com.mycompany.trabalho_final_tec_program_ii.questao03.Bala;
+import com.mycompany.trabalho_final_tec_program_ii.questao03.Bolacha;
+import com.mycompany.trabalho_final_tec_program_ii.questao03.Bombom;
+import com.mycompany.trabalho_final_tec_program_ii.questao03.Diversos;
+
+import com.mycompany.trabalho_final_tec_program_ii.questao04.Fundamental;
+import com.mycompany.trabalho_final_tec_program_ii.questao04.Universitario;
+import com.mycompany.trabalho_final_tec_program_ii.questao04.Tecnico;
+import com.mycompany.trabalho_final_tec_program_ii.questao04.Estudante;
+
 /**
  *
  * @author joaoo
@@ -38,5 +48,31 @@ public class TRABALHO_FINAL_TEC_PROGRAM_II {
         
         ImpostoMG imposto_mg = new ImpostoMG();
         System.out.println(String.format("Imposto MG: de R$ %.2f para R$ %.2f // Imposto MG: de R$ %.2f para R$ %.2f", valor, imposto_mg.calcularImposto(valor), valor2, imposto_mg.calcularImposto(valor2)));
+        
+        
+        System.out.println("\n\n ****************** Questão 03: ****************** ");
+        Bala bala = new Bala();
+        Double custo = 0.12;
+        System.out.println(String.format("Bala: Custo R$ %.2f -> Venda R$ %.2f", custo, bala.calcularPrecoVenda(custo)));
+        
+        Bolacha bolacha = new Bolacha();
+        custo = 1.25;
+        System.out.println(String.format("Bolacha: Custo R$ %.2f -> Venda R$ %.2f", custo, bolacha.calcularPrecoVenda(custo)));
+        
+        Bombom bombom = new Bombom();
+        custo = 0.60;
+        System.out.println(String.format("Bombom: Custo R$ %.2f -> Venda R$ %.2f", custo, bombom.calcularPrecoVenda(custo)));
+        
+        Diversos diversos = new Diversos();
+        custo = 10.90;
+        System.out.println(String.format("Diversos: Custo R$ %.2f -> Venda R$ %.2f", custo, diversos.calcularPrecoVenda(custo)));
+        
+        
+        System.out.println("\n\n ****************** Questão 04: ****************** ");
+        Estudante aluno1 = new Fundamental("Fundamental");
+        Estudante aluno2 = new Universitario("Universitario");
+        Estudante aluno3 = new Tecnico("Tecnico");
+        
+        System.out.printf("Aluno 1: %s\nAluno 2: %s\nAluno 3: %s\n", aluno1.getInstituicao(),aluno2.getInstituicao(),aluno3.getInstituicao());
     }
 }
