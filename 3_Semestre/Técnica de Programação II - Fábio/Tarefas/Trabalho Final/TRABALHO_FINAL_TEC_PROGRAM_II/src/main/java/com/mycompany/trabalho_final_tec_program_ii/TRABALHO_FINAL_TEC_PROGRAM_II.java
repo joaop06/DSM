@@ -3,6 +3,8 @@
  */
 
 package com.mycompany.trabalho_final_tec_program_ii;
+import java.util.Date;
+
 import com.mycompany.trabalho_final_tec_program_ii.questao01.Terrestre;
 import com.mycompany.trabalho_final_tec_program_ii.questao01.Aquatico;
 import com.mycompany.trabalho_final_tec_program_ii.questao01.Aereo;
@@ -19,6 +21,13 @@ import com.mycompany.trabalho_final_tec_program_ii.questao04.Fundamental;
 import com.mycompany.trabalho_final_tec_program_ii.questao04.Universitario;
 import com.mycompany.trabalho_final_tec_program_ii.questao04.Tecnico;
 import com.mycompany.trabalho_final_tec_program_ii.questao04.Estudante;
+
+import com.mycompany.trabalho_final_tec_program_ii.questao05.FabricaProdutos;
+import com.mycompany.trabalho_final_tec_program_ii.questao05.Produto;
+import com.mycompany.trabalho_final_tec_program_ii.questao05.SistemaControleProducao;
+import com.mycompany.trabalho_final_tec_program_ii.questao05.NotificacaoCliente;
+import com.mycompany.trabalho_final_tec_program_ii.questao05.SistemaFinanceiro;
+import com.mycompany.trabalho_final_tec_program_ii.questao05.SistemaLogistico;
 
 /**
  *
@@ -74,5 +83,24 @@ public class TRABALHO_FINAL_TEC_PROGRAM_II {
         Estudante aluno3 = new Tecnico("Tecnico");
         
         System.out.printf("Aluno 1: %s\nAluno 2: %s\nAluno 3: %s\n", aluno1.getInstituicao(),aluno2.getInstituicao(),aluno3.getInstituicao());
+        
+        
+        System.out.println("\n\n ****************** Questão 05: ****************** ");
+        
+        FabricaProdutos fabrica = new FabricaProdutos();
+        fabrica.adicionarObserver(new SistemaControleProducao());
+        fabrica.adicionarObserver(new NotificacaoCliente());
+        fabrica.adicionarObserver(new SistemaFinanceiro());
+        fabrica.adicionarObserver(new SistemaLogistico());
+
+        // Simular nova produção
+        Produto produto = new Produto("123", "Produto Showww", new Date(), "Lote001", 100);
+        fabrica.novaProducao(produto);
+        
+        System.out.println();
+        
+        // Simular nova produção
+        Produto produto2 = new Produto("456", "Novo Produto Legal", new Date(), "Lote002", 70);
+        fabrica.novaProducao(produto2);
     }
 }
