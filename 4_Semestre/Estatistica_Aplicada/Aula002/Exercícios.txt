@@ -1,0 +1,4 @@
+1- População é todo o meio, o ambiente no qual é realizado uma análise. Ex: Quero fazer uma pesquisa com os alunos da Fatec Franca, minha população são TODOS os alunos.
+Já a amostra é apenas uma parcela que representa a população. Ex: Minha amostra de população do exemplo anterios seria apenas uma parte dos alunos, de um curso específico, por exemplo.
+
+2-
