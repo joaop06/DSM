@@ -1,4 +1,33 @@
 1- População é todo o meio, o ambiente no qual é realizado uma análise. Ex: Quero fazer uma pesquisa com os alunos da Fatec Franca, minha população são TODOS os alunos.
 Já a amostra é apenas uma parcela que representa a população. Ex: Minha amostra de população do exemplo anterios seria apenas uma parte dos alunos, de um curso específico, por exemplo.
 
-2-
+2- Amostragem é a análise de um conjuto parcial de dados de uma população para representá-la em pesquisa.
+
+3- É mais rápida a análise, por ser um volume de dados menor. Dá pra fazer um levantamento preciso apenas com amostras em pesquisas complexas. Economiza recursos e mão de obra, reduzindo custos
+
+4- (N * n) / (N + n)
+    N: Valor total da população -> 9838
+    n: Valor referente a porcentagem do erro -> 4% => 625
+
+    R: (9838 * 625) / (9838 + 625)
+    R: 6.148.750 / 10.463
+    R: 588
+
+    
+5- a) 450 /30 => 15. Primeiros 5 clientes: 10, 25, 40, 55, 70 
+   b) 15 * 29 = 435
+      435 + 10 => 445
+
+6- a) Tamanho da população é de 1170
+   b) A amostra é de 152
+   c) 88 Homens e 64 Mulheres
+
+7- Grupo de 8600 mulheres > 65 anos 
+   Grupo de 5200 homens > 65 anos
+   
+   População: 8600 + 5200 = 13800
+   n = 250
+   13800 . x = 250 . 100
+   x = 1,81%
+   M = 8600 . 0,0181 ~= 156
+   H = 5200 . 0,0181 ~= 94

@@ -1,0 +1,91 @@
+openapi: 3.0.3
+info:
+  title: "API da aula de Laboratório Web com api first"
+  version: 1.0.0
+  contact:
+    email: joao-test@email.com
+
+servers:
+  - url: https://sistemax-stage.com.br/api
+  - url: https://sistemax.com.br/api
+
+tags:
+  - name: paciente
+    description: Endpoints para gerenciamento dos dados do Paciente
+    externalDocs:
+      url: https://sistemax-stage.com.br/doc/pacientes
+
+paths:
+  /pacientes:
+    post:
+      tags:
+        - paciente
+      summary: Cria um novo paciente
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  example: João Pedro
+                  description: Nome do Paciente
+                cpf:
+                  type: string
+                  example: 123.456.789-10
+                  description: CPF do Paciente
+                data_nascimento:
+                  type: string
+                  format: date
+                  example: '2000-01-01'
+                  description: Data de nascimento do Paciente
+                endereco: 
+                  type: object
+                  properties:
+                    cidade:
+                      type: string
+                      description: Cidade do paciente
+                    estado:
+                      type: string
+                      example: SP
+                      description: Estado UF
+                plano_saude:
+                  type: string
+                  example: sim
+                  description: Indica se o paciente possui plano de saude
+      responses:
+        "201":
+          description: Qaundo o paciente é criado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  nome:
+                    type: string
+                    example: João Pedro
+                    description: Nome do Paciente
+                  cpf:
+                    type: string
+                    example: 123.456.789-10
+                    description: CPF do Paciente
+                  data_nascimento:
+                    type: string
+                    format: date
+                    example: '2000-01-01'
+                    description: Data de nascimento do Paciente
+                  endereco: 
+                    type: object
+                    properties:
+                      cidade:
+                        type: string
+                        description: Cidade do paciente
+                      estado:
+                        type: string
+                        example: SP
+                        description: Estado UF
+                  plano_saude:
+                    type: string
+                    example: sim
+                    description: Indica se o paciente possui plano de saude
